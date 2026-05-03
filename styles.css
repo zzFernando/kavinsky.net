@@ -1,0 +1,396 @@
+/* ========================== */
+/* FALLOUT TERMINAL THEME     */
+/* ========================== */
+
+:root {
+    --fallout-green: #00ff00;
+    --fallout-green-dim: #00cc00;
+    --fallout-green-dark: #008800;
+    --fallout-amber: #ffaa00;
+    --fallout-amber-dim: #cc8800;
+    --fallout-red: #ff3300;
+    --fallout-bg: #0a0e0a;
+    --fallout-darker: #050805;
+    --terminal-glow: 0 0 20px rgba(0, 255, 0, 0.3);
+    --scanline-opacity: 0.03;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Courier New', 'Lucida Console', monospace;
+    line-height: 1.6;
+    color: var(--fallout-green);
+    background-color: var(--fallout-bg);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,var(--scanline-opacity)) 2px, rgba(0,0,0,var(--scanline-opacity)) 4px);
+    z-index: 9999;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* ========================== */
+/* HEADER                     */
+/* ========================== */
+
+.vault-header { text-align: center; padding: 30px 20px 20px; margin-bottom: 20px; }
+
+.vault-seal { font-size: 3rem; animation: rotate 20s linear infinite; display: inline-block; }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.hero-profile-pic {
+    width: 150px; height: 150px; margin: 15px auto;
+    border: 3px solid var(--fallout-green); overflow: hidden;
+    box-shadow: 6px 6px 0 var(--fallout-green-dark);
+    transition: all 0.3s ease;
+}
+.hero-profile-pic:hover { box-shadow: 9px 9px 0 var(--fallout-green); transform: translate(-3px, -3px); }
+.hero-profile-pic img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+    filter: saturate(0.3) contrast(1.1) sepia(0.2) hue-rotate(70deg);
+    transition: filter 0.3s ease;
+}
+.hero-profile-pic:hover img { filter: none; }
+
+/* CRT overlay on images */
+.terminal-split-image, .about-avatar, .project-image { position: relative; overflow: hidden; }
+
+.terminal-split-image::before, .about-avatar::before, .project-image::before {
+    content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
+}
+.terminal-split-image::after, .about-avatar::after, .project-image::after {
+    content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%);
+}
+
+.terminal-split-image img, .about-avatar img, .project-image img {
+    filter: saturate(0.4) contrast(1.15) sepia(0.15) hue-rotate(70deg) brightness(0.95);
+    transition: filter 0.4s ease; display: block; width: 100%; height: 100%; object-fit: cover;
+}
+.terminal-split-image:hover img, .about-avatar:hover img, .project-image:hover img { filter: none; }
+
+.vault-header h1 {
+    font-size: 2.2rem; letter-spacing: 5px; margin: 10px 0 5px;
+    color: var(--fallout-green);
+    text-shadow: 0 0 10px var(--fallout-green), 0 0 20px var(--fallout-green);
+    font-weight: bold;
+}
+
+.glitch { position: relative; display: inline-block; }
+.kavinsky-name {
+    color: var(--fallout-amber);
+    text-shadow: 0 0 10px var(--fallout-amber), 0 0 20px var(--fallout-amber);
+}
+.glitch::before, .glitch::after {
+    content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    pointer-events: none;
+}
+.glitch::before {
+    animation: glitch-anim 0.3s infinite; color: var(--fallout-amber); z-index: -1;
+    text-shadow: -2px 0 var(--fallout-red);
+}
+.glitch::after {
+    animation: glitch-anim2 0.3s infinite; color: var(--fallout-green); z-index: -2;
+    text-shadow: -2px 0 var(--fallout-amber);
+}
+@keyframes glitch-anim {
+    0% { clip-path: rect(0, 900px, 0, 0); } 5% { clip-path: rect(10px, 9999px, 30px, 0); }
+    10% { clip-path: rect(5px, 9999px, 10px, 0); } 15% { clip-path: rect(5px, 9999px, 9999px, 0); }
+    20% { clip-path: rect(2px, 9999px, 5px, 0); } 25% { clip-path: rect(3px, 9999px, 9999px, 0); }
+    30% { clip-path: rect(5px, 9999px, 14px, 0); } 100% { clip-path: rect(0, 0, 0, 0); }
+}
+@keyframes glitch-anim2 {
+    0% { clip-path: rect(0, 0, 0, 0); } 5% { clip-path: rect(4px, 9999px, 5px, 0); }
+    10% { clip-path: rect(4px, 9999px, 15px, 0); } 15% { clip-path: rect(5px, 9999px, 6px, 0); }
+    20% { clip-path: rect(3px, 9999px, 2px, 0); } 25% { clip-path: rect(4px, 9999px, 5px, 0); }
+    30% { clip-path: rect(2px, 9999px, 15px, 0); } 100% { clip-path: rect(0, 900px, 0, 0); }
+}
+
+.vault-subtitle {
+    font-size: 0.8rem; letter-spacing: 3px; color: var(--fallout-amber);
+    text-shadow: 0 0 5px var(--fallout-amber); text-transform: uppercase; margin-bottom: 2px;
+}
+.vault-affiliation { font-size: 0.8rem; color: var(--fallout-green-dim); font-style: italic; margin-bottom: 4px; }
+.vault-tagline {
+    font-size: 0.85rem; color: var(--fallout-amber); font-style: italic;
+    text-shadow: 0 0 5px var(--fallout-amber); margin-bottom: 15px;
+}
+
+.hero-social { display: flex; gap: 12px; justify-content: center; margin: 15px 0; }
+.hero-social a {
+    display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+    background-color: rgba(0,255,0,0.1); border: 2px solid var(--fallout-green);
+    color: var(--fallout-green); font-size: 1.1rem; text-decoration: none;
+    box-shadow: 3px 3px 0 var(--fallout-green-dark); transition: all 0.3s ease;
+}
+.hero-social a:hover {
+    background-color: var(--fallout-green); color: var(--fallout-bg);
+    box-shadow: 5px 5px 0 var(--fallout-green); transform: translate(-2px, -2px);
+}
+
+/* ========================== */
+/* COLOR TOGGLE               */
+/* ========================== */
+
+.color-toggle {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
+    padding: 6px 14px; background-color: rgba(255,170,0,0.1); border: 2px solid var(--fallout-amber);
+    color: var(--fallout-amber); font-family: 'Courier New', monospace; font-size: 0.7rem;
+    letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
+    transition: all 0.3s ease; text-shadow: 0 0 5px var(--fallout-amber);
+    box-shadow: 0 0 10px rgba(255,170,0,0.2);
+}
+.color-toggle:hover { background-color: rgba(255,170,0,0.2); box-shadow: 0 0 20px rgba(255,170,0,0.4); transform: scale(1.05); }
+.color-toggle:active { transform: scale(0.95); }
+.toggle-icon { animation: rotate 10s linear infinite; display: inline-block; font-size: 0.9rem; }
+
+body.amber-theme { --fallout-green: #ffaa00; --fallout-green-dim: #cc8800; --fallout-green-dark: #886600; }
+
+/* ========================== */
+/* MAIN LAYOUT                */
+/* ========================== */
+
+.vault-main { display: grid; grid-template-columns: 1fr 160px; gap: 20px; margin-bottom: 40px; align-items: start; }
+
+/* ========================== */
+/* TERMINAL SCREEN            */
+/* ========================== */
+
+.terminal-screen {
+    background-color: var(--fallout-darker); border: 4px solid var(--fallout-green);
+    box-shadow: var(--terminal-glow), inset 0 0 30px rgba(0,255,0,0.1), 0 0 30px rgba(0,255,0,0.2);
+    border-radius: 8px; overflow: hidden;
+}
+.terminal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: rgba(0,255,0,0.05); border-bottom: 2px solid var(--fallout-green);
+    padding: 10px 15px; font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--fallout-green-dim);
+}
+.terminal-dots { display: flex; gap: 5px; }
+.dot { width: 8px; height: 8px; background-color: var(--fallout-green); border-radius: 50%; animation: blink 1.5s infinite; }
+.dot:nth-child(2) { animation-delay: 0.3s; } .dot:nth-child(3) { animation-delay: 0.6s; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* ========================== */
+/* TERMINAL SECTIONS          */
+/* ========================== */
+
+.terminal-section { padding: 25px 20px; border-bottom: 1px solid rgba(0,255,0,0.2); }
+.terminal-section:last-child { border-bottom: none; }
+.terminal-title {
+    color: var(--fallout-amber); font-size: 1.1rem; margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--fallout-amber); letter-spacing: 2px;
+}
+.terminal-text { color: var(--fallout-green); margin-bottom: 12px; line-height: 1.8; font-size: 0.9rem; }
+.terminal-text strong { color: var(--fallout-amber); text-shadow: 0 0 5px var(--fallout-amber); }
+.terminal-text a {
+    color: var(--fallout-amber); text-decoration: none; text-shadow: 0 0 5px var(--fallout-amber);
+    transition: all 0.3s ease;
+}
+.terminal-text a:hover { color: var(--fallout-red); text-shadow: 0 0 15px var(--fallout-red); }
+
+/* ========================== */
+/* TERMINAL LIST              */
+/* ========================== */
+
+.terminal-list { list-style: none; padding: 0; margin: 10px 0; }
+.terminal-list li { padding: 6px 0 6px 20px; position: relative; color: var(--fallout-green); font-size: 0.85rem; line-height: 1.6; }
+.terminal-list li::before {
+    content: '▹'; position: absolute; left: 0; color: var(--fallout-amber);
+    text-shadow: 0 0 5px var(--fallout-amber);
+}
+
+/* ========================== */
+/* ABOUT WITH AVATAR          */
+/* ========================== */
+
+.terminal-about { display: flex; gap: 20px; align-items: flex-start; }
+.about-avatar { flex-shrink: 0; width: 120px; height: 120px; border: 2px solid var(--fallout-green); box-shadow: 4px 4px 0 var(--fallout-green-dark); }
+.about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.about-text { flex: 1; }
+.edu-entry { margin-bottom: 16px; }
+.edu-entry:last-child { margin-bottom: 0; }
+
+/* ========================== */
+/* SPLIT SECTIONS             */
+/* ========================== */
+
+.terminal-split { display: grid; grid-template-columns: 1fr 160px; gap: 20px; align-items: start; }
+.terminal-split-reverse { display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: start; }
+.terminal-split-image { width: 160px; height: 160px; border: 2px solid var(--fallout-green); box-shadow: 4px 4px 0 var(--fallout-green-dark); }
+
+/* ========================== */
+/* TECH SKILLS GRID           */
+/* ========================== */
+
+.tech-skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px; }
+.tech-category { background-color: rgba(0,0,0,0.4); border: 2px solid var(--fallout-green-dark); padding: 12px; transition: all 0.3s ease; }
+.tech-category:hover { border-color: var(--fallout-green); box-shadow: 0 0 10px rgba(0,255,0,0.3); }
+.tech-category h4 { color: var(--fallout-amber); margin-bottom: 6px; text-transform: uppercase; text-shadow: 0 0 5px var(--fallout-amber); font-size: 0.75rem; letter-spacing: 1px; }
+.tech-category p { color: var(--fallout-green); font-size: 0.8rem; line-height: 1.5; margin: 0; }
+
+/* ========================== */
+/* TECH STACK GRID            */
+/* ========================== */
+
+.techstack-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px; }
+.techstack-category { background-color: rgba(0,0,0,0.4); border: 2px solid var(--fallout-green-dark); padding: 12px; transition: all 0.3s ease; }
+.techstack-category:hover { border-color: var(--fallout-green); box-shadow: 0 0 10px rgba(0,255,0,0.3); }
+.techstack-category h4 { color: var(--fallout-amber); margin-bottom: 6px; text-transform: uppercase; text-shadow: 0 0 5px var(--fallout-amber); font-size: 0.75rem; letter-spacing: 1px; }
+.techstack-category p { color: var(--fallout-green); font-size: 0.8rem; line-height: 1.5; margin: 0; }
+
+/* ========================== */
+/* PROJECT GRID               */
+/* ========================== */
+
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 15px; }
+.project-card { background-color: rgba(0,0,0,0.4); border: 2px solid var(--fallout-green-dark); overflow: hidden; transition: all 0.3s ease; }
+.project-card:hover { border-color: var(--fallout-green); box-shadow: 0 0 15px rgba(0,255,0,0.3); transform: translateY(-3px); }
+.project-image { width: 100%; aspect-ratio: 1.5; border-bottom: 2px solid var(--fallout-green); background-color: rgba(0,0,0,0.3); }
+.project-name {
+    color: var(--fallout-amber); margin: 12px 12px 6px; text-shadow: 0 0 8px var(--fallout-amber);
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;
+}
+.project-desc { color: var(--fallout-green); margin: 0 12px 12px; font-size: 0.8rem; line-height: 1.5; }
+.project-actions { display: flex; gap: 10px; padding: 0 12px 12px; flex-wrap: wrap; }
+.project-actions a {
+    display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px;
+    background-color: rgba(0,255,0,0.1); border: 2px solid var(--fallout-green);
+    color: var(--fallout-green); font-size: 0.7rem; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+    box-shadow: 2px 2px 0 var(--fallout-green-dark);
+}
+.project-actions a:hover {
+    background-color: var(--fallout-green); color: var(--fallout-bg);
+    box-shadow: 3px 3px 0 var(--fallout-green); transform: translate(-1px, -1px);
+}
+
+/* ========================== */
+/* LAB LINKS                  */
+/* ========================== */
+
+.lab-links { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.lab-link {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
+    background-color: rgba(255,170,0,0.1); border: 2px solid var(--fallout-amber);
+    color: var(--fallout-amber); text-decoration: none; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+    box-shadow: 3px 3px 0 var(--fallout-green-dark);
+}
+.lab-link:hover {
+    background-color: var(--fallout-amber); color: var(--fallout-bg);
+    box-shadow: 4px 4px 0 var(--fallout-amber); transform: translate(-1px, -1px);
+}
+
+/* ========================== */
+/* SIDE MENU                  */
+/* ========================== */
+
+.vault-menu { display: flex; flex-direction: column; gap: 6px; position: sticky; top: 20px; }
+.menu-item {
+    display: block; padding: 10px 12px; background-color: rgba(0,255,0,0.05);
+    border: 2px solid var(--fallout-green-dark); color: var(--fallout-green);
+    text-decoration: none; cursor: pointer; transition: all 0.3s ease;
+    text-shadow: 0 0 5px var(--fallout-green); text-transform: uppercase;
+    font-size: 0.7rem; letter-spacing: 1px; font-family: 'Courier New', monospace; font-weight: bold;
+}
+.menu-item:hover {
+    background-color: rgba(0,255,0,0.2); border-color: var(--fallout-green);
+    box-shadow: 0 0 20px rgba(0,255,0,0.5), inset 0 0 10px rgba(0,255,0,0.2);
+    transform: translateX(5px);
+}
+.menu-item:active { background-color: var(--fallout-green); color: var(--fallout-bg); box-shadow: 0 0 30px var(--fallout-green); }
+
+/* ========================== */
+/* PIPBOY PANEL               */
+/* ========================== */
+
+.pipboy-panel {
+    background-color: var(--fallout-darker); border: 4px solid var(--fallout-green-dark);
+    box-shadow: 0 0 15px rgba(0,255,0,0.2); padding: 12px; height: fit-content;
+    position: sticky; top: 20px; border-radius: 8px;
+}
+.pipboy-screen {
+    background-color: rgba(0,0,0,0.6); border: 2px solid var(--fallout-green-dark);
+    padding: 12px; box-shadow: inset 0 0 15px rgba(0,255,0,0.05);
+}
+.pipboy-content { text-align: center; }
+
+.radiation-meter { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,255,0,0.2); }
+.radiation-meter p { color: var(--fallout-amber); font-size: 0.7rem; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 5px var(--fallout-amber); }
+.radiation-bar { height: 10px; background-color: rgba(0,0,0,0.5); border: 1px solid var(--fallout-green-dark); overflow: hidden; }
+.radiation-fill { height: 100%; width: 30%; background: linear-gradient(90deg, var(--fallout-red), var(--fallout-amber)); animation: radiation-pulse 2s infinite; }
+@keyframes radiation-pulse { 0%, 100% { width: 30%; } 50% { width: 45%; } }
+
+.stat-box { background-color: rgba(0,0,0,0.5); border: 2px solid var(--fallout-green-dark); padding: 12px; margin-bottom: 12px; box-shadow: inset 0 0 10px rgba(0,255,0,0.05); }
+.stat-line { margin: 6px 0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--fallout-green); }
+.highlight { color: var(--fallout-amber); text-shadow: 0 0 8px var(--fallout-amber); font-weight: bold; }
+
+.inventory-display p {
+    color: var(--fallout-green); font-size: 0.7rem; margin: 4px 0;
+    text-shadow: 0 0 3px var(--fallout-green); text-align: left;
+    padding: 3px 0; border-bottom: 1px solid rgba(0,255,0,0.1);
+}
+
+/* ========================== */
+/* CURSOR / FOOTER            */
+/* ========================== */
+
+.blink { animation: cursor-blink 1s infinite; }
+@keyframes cursor-blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+.footer-section { text-align: center; background-color: rgba(0,0,0,0.3); border-top: 2px solid var(--fallout-amber); }
+.gold-text { color: var(--fallout-amber); text-shadow: 0 0 10px var(--fallout-amber); font-weight: bold; font-size: 1rem; letter-spacing: 2px; }
+
+/* ========================== */
+/* RESPONSIVE                 */
+/* ========================== */
+
+@media (max-width: 900px) {
+    .vault-main { grid-template-columns: 1fr; }
+    .vault-menu { position: static; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .menu-item { flex: 0 0 auto; font-size: 0.65rem; padding: 8px 10px; }
+    .pipboy-panel { position: static; }
+    .terminal-split, .terminal-split-reverse { grid-template-columns: 1fr; }
+    .terminal-split-image { width: 100%; height: 150px; }
+    .terminal-about { flex-direction: column; align-items: center; }
+    .about-avatar { width: 130px; height: 130px; }
+    .tech-skills { grid-template-columns: 1fr; }
+    .techstack-grid { grid-template-columns: 1fr; }
+    .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 10px; }
+    .vault-header { padding: 20px 10px; }
+    .vault-seal { font-size: 2rem; }
+    .hero-profile-pic { width: 130px; height: 130px; }
+    .vault-header h1 { font-size: 1.5rem; letter-spacing: 3px; }
+    .vault-subtitle { font-size: 0.7rem; letter-spacing: 2px; }
+    .terminal-header { font-size: 0.55rem; padding: 8px 10px; }
+    .terminal-section { padding: 15px 12px; }
+    .terminal-title { font-size: 0.9rem; }
+    .terminal-text { font-size: 0.85rem; }
+    .project-actions { gap: 8px; }
+    .project-actions a { font-size: 0.65rem; padding: 3px 8px; }
+}
+
+@media (max-width: 480px) {
+    .vault-header h1 { font-size: 1.2rem; letter-spacing: 2px; }
+    .hero-social { gap: 8px; }
+    .hero-social a { width: 36px; height: 36px; font-size: 1rem; }
+    .menu-item { width: 100%; text-align: center; }
+    .terminal-header { flex-direction: column; gap: 5px; }
+    .terminal-split-image { height: 120px; }
+}

@@ -1,0 +1,21 @@
+# Gems
+.bundle/
+vendor/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+*.swo
+*~
+
+# Secrets
+.env
+.env.local
