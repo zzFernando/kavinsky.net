@@ -5,12 +5,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeTerminal();
     addSmoothScrolling();
-    addHoverEffects();
     animateRadiationMeter();
     randomizeStats();
     addRandomGlitch();
-    playBootSound();
-    updateTimeDisplay();
     initializeColorToggle();
 });
 
@@ -71,39 +68,8 @@ function addSmoothScrolling() {
 }
 
 // ==========================
-// HOVER EFFECTS
-// ==========================
-
-function addHoverEffects() {
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px)';
-        });
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-}
-
-// ==========================
 // AUDIO EFFECTS
 // ==========================
-
-function playBootSound() {
-    try {
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const beeps = [
-            { freq: 800, duration: 100, delay: 500 },
-            { freq: 1000, duration: 100, delay: 650 },
-            { freq: 1200, duration: 150, delay: 800 }
-        ];
-        beeps.forEach(beep => {
-            setTimeout(() => {
-                playBeep(audioContext, beep.freq, beep.duration);
-            }, beep.delay);
-        });
-    } catch (e) {}
-}
 
 function playBeep(audioContext, frequency, duration) {
     try {
@@ -144,19 +110,16 @@ function animateRadiationMeter() {
 // ==========================
 
 function randomizeStats() {
-    const stats = ['OPTIMAL', 'EXCELLENT', 'GOOD', 'STABLE', 'READY', 'ACTIVE'];
+    const statValues = ['OPTIMAL', 'EXCELLENT', 'GOOD', 'STABLE', 'READY', 'ACTIVE'];
 
     setInterval(() => {
-        const statLines = document.querySelectorAll('.stat-line');
-        statLines.forEach(line => {
+        document.querySelectorAll('.stat-line').forEach(line => {
             if (Math.random() > 0.85 && line.textContent.includes('STATUS:')) {
-                const newStat = stats[Math.floor(Math.random() * stats.length)];
-                const original = 'STATUS: ' + newStat;
-                line.textContent = original;
+                const span = line.querySelector('.highlight');
+                if (!span) return;
+                span.textContent = statValues[Math.floor(Math.random() * statValues.length)];
                 line.style.color = 'var(--fallout-amber)';
-                setTimeout(() => {
-                    line.style.color = '';
-                }, 500);
+                setTimeout(() => { line.style.color = ''; }, 500);
             }
         });
     }, 8000);
@@ -228,31 +191,6 @@ document.addEventListener('keydown', function(event) {
             menu.style.boxShadow = '0 0 30px rgba(0, 255, 0, 0.5)';
             setTimeout(() => { menu.style.boxShadow = ''; }, 1000);
         }
-    }
-});
-
-// ==========================
-// TIME DISPLAY
-// ==========================
-
-function updateTimeDisplay() {
-    setInterval(() => {
-        const now = new Date();
-        const t = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        document.title = `[${t}] Fernando Silveira - AI Researcher`;
-    }, 1000);
-}
-
-// ==========================
-// PAGE VISIBILITY
-// ==========================
-
-document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-        try {
-            const ctx = new (window.AudioContext || window.webkitAudioContext)();
-            playBeep(ctx, 1000, 150);
-        } catch (e) {}
     }
 });
 

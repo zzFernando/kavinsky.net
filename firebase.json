@@ -8,9 +8,11 @@
       ".git",
       ".git/**"
     ],
+    "cleanUrls": true,
+    "trailingSlash": false,
     "headers": [
       {
-        "source": "**/*.@(js|css|png|jpg|jpeg|svg|woff|woff2|ttf|eot|ico)",
+        "source": "**/*.@(js|css|png|jpg|jpeg|svg|webp|woff|woff2|ttf|eot|ico)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -24,6 +26,19 @@
           {
             "key": "Cache-Control",
             "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "sitemap.xml",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/xml; charset=utf-8"
           }
         ]
       }

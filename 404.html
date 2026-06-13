@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — SIGNAL LOST | kavinsky.net</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00ff00;
+            --green-dim: #00cc00;
+            --green-dark: #008800;
+            --amber: #ffaa00;
+            --red: #ff3300;
+            --bg: #0a0e0a;
+            --darker: #050805;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Courier New', 'Lucida Console', monospace;
+            background-color: var(--bg);
+            color: var(--green);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+            z-index: 9999;
+        }
+
+        .terminal {
+            background-color: var(--darker);
+            border: 4px solid var(--green);
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0,255,0,0.3), inset 0 0 30px rgba(0,255,0,0.05);
+            max-width: 600px;
+            width: 90%;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0,255,0,0.05);
+            border-bottom: 2px solid var(--green);
+            padding: 10px 15px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--green-dim);
+        }
+
+        .dots { display: flex; gap: 5px; }
+        .dot {
+            width: 8px; height: 8px;
+            background-color: var(--green);
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        .dot:nth-child(2) { animation-delay: 0.3s; }
+        .dot:nth-child(3) { animation-delay: 0.6s; }
+
+        .terminal-body { padding: 40px 30px; text-align: center; }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: bold;
+            color: var(--red);
+            text-shadow: 0 0 20px var(--red), 0 0 40px rgba(255,51,0,0.5);
+            letter-spacing: 10px;
+            animation: glitch-big 3s infinite;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .error-title {
+            font-size: 1rem;
+            color: var(--amber);
+            text-shadow: 0 0 10px var(--amber);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(0,255,0,0.2);
+            margin: 20px 0;
+        }
+
+        .message { color: var(--green); font-size: 0.85rem; line-height: 1.8; margin-bottom: 8px; }
+        .message .amber { color: var(--amber); text-shadow: 0 0 5px var(--amber); }
+        .message .red { color: var(--red); }
+
+        .log {
+            background-color: rgba(0,0,0,0.4);
+            border: 1px solid var(--green-dark);
+            padding: 12px 16px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 0.75rem;
+            color: var(--green-dim);
+            line-height: 2;
+        }
+        .log .prompt { color: var(--amber); }
+
+        .actions { display: flex; gap: 12px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border: 2px solid var(--green);
+            background-color: rgba(0,255,0,0.08);
+            color: var(--green);
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 3px 3px 0 var(--green-dark);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: var(--green);
+            color: var(--bg);
+            box-shadow: 5px 5px 0 var(--green);
+            transform: translate(-2px, -2px);
+        }
+
+        .cursor { animation: cursor-blink 1s infinite; }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+        @keyframes cursor-blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+        @keyframes glitch-big {
+            0%, 92%, 100% { text-shadow: 0 0 20px var(--red), 0 0 40px rgba(255,51,0,0.5); transform: none; }
+            93% { text-shadow: -4px 0 var(--amber), 4px 0 rgba(0,255,0,0.8); transform: skewX(-2deg); }
+            95% { text-shadow: 4px 0 var(--amber), -4px 0 rgba(0,255,0,0.8); transform: skewX(2deg); }
+            97% { text-shadow: -4px 0 var(--red), 4px 0 rgba(0,255,0,0.8); transform: skewX(-1deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; }
+            .cursor { opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            .error-code { font-size: 3.5rem; letter-spacing: 6px; }
+            .terminal-body { padding: 24px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <span>ROBCO INDUSTRIES (TM) TERMINAL</span>
+            <span>v3.1.2</span>
+        </div>
+        <div class="terminal-body">
+            <div class="error-code">404</div>
+            <div class="error-title">☢ SIGNAL LOST ☢</div>
+
+            <div class="log">
+                <div><span class="prompt">&gt;</span> LOCATING RESOURCE...</div>
+                <div><span class="prompt">&gt;</span> SCANNING SECTORS... <span style="color:var(--red)">FAILED</span></div>
+                <div><span class="prompt">&gt;</span> STATUS: <span style="color:var(--red)">PAGE NOT FOUND</span></div>
+                <div><span class="prompt">&gt;</span> <span class="cursor">_</span></div>
+            </div>
+
+            <hr class="divider">
+
+            <p class="message">
+                The requested resource could not be located.<br>
+                It may have been <span class="amber">moved</span>, <span class="red">destroyed</span>, or never existed.
+            </p>
+            <p class="message" style="font-size:0.75rem; color: var(--green-dim); margin-top: 6px;">
+                War. War never changes. But URLs sometimes do.
+            </p>
+
+            <div class="actions">
+                <a href="/" class="btn"><i class="fas fa-home"></i> Return to Vault</a>
+                <a href="mailto:fernando.silveira@inf.ufrgs.br" class="btn"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

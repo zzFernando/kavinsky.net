@@ -104,16 +104,24 @@ body::after {
     text-shadow: -2px 0 var(--fallout-amber);
 }
 @keyframes glitch-anim {
-    0% { clip-path: rect(0, 900px, 0, 0); } 5% { clip-path: rect(10px, 9999px, 30px, 0); }
-    10% { clip-path: rect(5px, 9999px, 10px, 0); } 15% { clip-path: rect(5px, 9999px, 9999px, 0); }
-    20% { clip-path: rect(2px, 9999px, 5px, 0); } 25% { clip-path: rect(3px, 9999px, 9999px, 0); }
-    30% { clip-path: rect(5px, 9999px, 14px, 0); } 100% { clip-path: rect(0, 0, 0, 0); }
+    0%   { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+    5%   { clip-path: polygon(0 10px, 100% 10px, 100% 30px, 0 30px); }
+    10%  { clip-path: polygon(0 5px, 100% 5px, 100% 10px, 0 10px); }
+    15%  { clip-path: polygon(0 5px, 100% 5px, 100% 100%, 0 100%); }
+    20%  { clip-path: polygon(0 2px, 100% 2px, 100% 5px, 0 5px); }
+    25%  { clip-path: polygon(0 3px, 100% 3px, 100% 100%, 0 100%); }
+    30%  { clip-path: polygon(0 5px, 100% 5px, 100% 14px, 0 14px); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
 }
 @keyframes glitch-anim2 {
-    0% { clip-path: rect(0, 0, 0, 0); } 5% { clip-path: rect(4px, 9999px, 5px, 0); }
-    10% { clip-path: rect(4px, 9999px, 15px, 0); } 15% { clip-path: rect(5px, 9999px, 6px, 0); }
-    20% { clip-path: rect(3px, 9999px, 2px, 0); } 25% { clip-path: rect(4px, 9999px, 5px, 0); }
-    30% { clip-path: rect(2px, 9999px, 15px, 0); } 100% { clip-path: rect(0, 900px, 0, 0); }
+    0%   { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+    5%   { clip-path: polygon(0 4px, 100% 4px, 100% 5px, 0 5px); }
+    10%  { clip-path: polygon(0 4px, 100% 4px, 100% 15px, 0 15px); }
+    15%  { clip-path: polygon(0 5px, 100% 5px, 100% 6px, 0 6px); }
+    20%  { clip-path: polygon(0 3px, 100% 3px, 100% 3px, 0 3px); }
+    25%  { clip-path: polygon(0 4px, 100% 4px, 100% 5px, 0 5px); }
+    30%  { clip-path: polygon(0 2px, 100% 2px, 100% 15px, 0 15px); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
 }
 
 .vault-subtitle {
@@ -154,13 +162,18 @@ body::after {
 .color-toggle:active { transform: scale(0.95); }
 .toggle-icon { animation: rotate 10s linear infinite; display: inline-block; font-size: 0.9rem; }
 
-body.amber-theme { --fallout-green: #ffaa00; --fallout-green-dim: #cc8800; --fallout-green-dark: #886600; }
+body.amber-theme {
+    --fallout-green: #ffaa00;
+    --fallout-green-dim: #cc8800;
+    --fallout-green-dark: #886600;
+    --terminal-glow: 0 0 20px rgba(255, 170, 0, 0.3);
+}
 
 /* ========================== */
 /* MAIN LAYOUT                */
 /* ========================== */
 
-.vault-main { display: grid; grid-template-columns: 1fr 160px; gap: 20px; margin-bottom: 40px; align-items: start; }
+.vault-main { display: grid; grid-template-columns: 1fr 160px auto; gap: 20px; margin-bottom: 40px; align-items: start; }
 
 /* ========================== */
 /* TERMINAL SCREEN            */
@@ -231,24 +244,31 @@ body.amber-theme { --fallout-green: #ffaa00; --fallout-green-dim: #cc8800; --fal
 .terminal-split-image { width: 160px; height: 160px; border: 2px solid var(--fallout-green); box-shadow: 4px 4px 0 var(--fallout-green-dark); }
 
 /* ========================== */
+/* SHARED GRID CATEGORY CARD  */
+/* ========================== */
+
+.grid-category {
+    background-color: rgba(0,0,0,0.4); border: 2px solid var(--fallout-green-dark);
+    padding: 12px; transition: all 0.3s ease;
+}
+.grid-category:hover { border-color: var(--fallout-green); box-shadow: 0 0 10px rgba(0,255,0,0.3); }
+.grid-category h4 {
+    color: var(--fallout-amber); margin-bottom: 6px; text-transform: uppercase;
+    text-shadow: 0 0 5px var(--fallout-amber); font-size: 0.75rem; letter-spacing: 1px;
+}
+.grid-category p { color: var(--fallout-green); font-size: 0.8rem; line-height: 1.5; margin: 0; }
+
+/* ========================== */
 /* TECH SKILLS GRID           */
 /* ========================== */
 
 .tech-skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px; }
-.tech-category { background-color: rgba(0,0,0,0.4); border: 2px solid var(--fallout-green-dark); padding: 12px; transition: all 0.3s ease; }
-.tech-category:hover { border-color: var(--fallout-green); box-shadow: 0 0 10px rgba(0,255,0,0.3); }
-.tech-category h4 { color: var(--fallout-amber); margin-bottom: 6px; text-transform: uppercase; text-shadow: 0 0 5px var(--fallout-amber); font-size: 0.75rem; letter-spacing: 1px; }
-.tech-category p { color: var(--fallout-green); font-size: 0.8rem; line-height: 1.5; margin: 0; }
 
 /* ========================== */
 /* TECH STACK GRID            */
 /* ========================== */
 
 .techstack-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 15px; }
-.techstack-category { background-color: rgba(0,0,0,0.4); border: 2px solid var(--fallout-green-dark); padding: 12px; transition: all 0.3s ease; }
-.techstack-category:hover { border-color: var(--fallout-green); box-shadow: 0 0 10px rgba(0,255,0,0.3); }
-.techstack-category h4 { color: var(--fallout-amber); margin-bottom: 6px; text-transform: uppercase; text-shadow: 0 0 5px var(--fallout-amber); font-size: 0.75rem; letter-spacing: 1px; }
-.techstack-category p { color: var(--fallout-green); font-size: 0.8rem; line-height: 1.5; margin: 0; }
 
 /* ========================== */
 /* PROJECT GRID               */
@@ -319,7 +339,7 @@ body.amber-theme { --fallout-green: #ffaa00; --fallout-green-dim: #cc8800; --fal
 .pipboy-panel {
     background-color: var(--fallout-darker); border: 4px solid var(--fallout-green-dark);
     box-shadow: 0 0 15px rgba(0,255,0,0.2); padding: 12px; height: fit-content;
-    position: sticky; top: 20px; border-radius: 8px;
+    position: sticky; top: 20px; border-radius: 8px; width: 200px;
 }
 .pipboy-screen {
     background-color: rgba(0,0,0,0.6); border: 2px solid var(--fallout-green-dark);
@@ -354,14 +374,33 @@ body.amber-theme { --fallout-green: #ffaa00; --fallout-green-dim: #cc8800; --fal
 .gold-text { color: var(--fallout-amber); text-shadow: 0 0 10px var(--fallout-amber); font-weight: bold; font-size: 1rem; letter-spacing: 2px; }
 
 /* ========================== */
+/* REDUCED MOTION             */
+/* ========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .blink { opacity: 1; }
+    html { scroll-behavior: auto; }
+}
+
+/* ========================== */
 /* RESPONSIVE                 */
 /* ========================== */
+
+@media (max-width: 1100px) {
+    .vault-main { grid-template-columns: 1fr 160px; }
+    .pipboy-panel { display: none; }
+}
 
 @media (max-width: 900px) {
     .vault-main { grid-template-columns: 1fr; }
     .vault-menu { position: static; flex-direction: row; flex-wrap: wrap; justify-content: center; }
     .menu-item { flex: 0 0 auto; font-size: 0.65rem; padding: 8px 10px; }
-    .pipboy-panel { position: static; }
+    .pipboy-panel { display: block; position: static; width: 100%; }
     .terminal-split, .terminal-split-reverse { grid-template-columns: 1fr; }
     .terminal-split-image { width: 100%; height: 150px; }
     .terminal-about { flex-direction: column; align-items: center; }
