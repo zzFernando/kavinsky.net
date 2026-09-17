@@ -1,30 +1,136 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 — Record not found | Fernando Silveira</title>
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#0b0c0b">
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 — Field note not found | Fernando Silveira</title>
+<meta name="description" content="The requested page could not be found on Kavinsky — Field Notes.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#c7a66e" id="themeColor">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap');
+:root{--ink:#2d2115;--faint:#715c40;--paper:#c7a66e;--paper2:#d6ba82}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;min-width:320px;color:var(--ink);font-family:"Cormorant Garamond",serif;
+ background:
+ radial-gradient(circle at 20% 10%,rgba(255,245,196,.32),transparent 22%),
+ radial-gradient(circle at 80% 45%,rgba(89,53,24,.11),transparent 25%),
+ repeating-linear-gradient(0deg,rgba(60,35,15,.025) 0 1px,transparent 1px 4px),
+ linear-gradient(100deg,var(--paper2),var(--paper) 47%,#d2b47b);
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")
+}
+a{color:inherit;text-underline-offset:.2em}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.skip-link{position:fixed;left:16px;top:16px;z-index:10;padding:9px 13px;color:var(--ink);background:var(--paper2);border:1px solid;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
+.wrap{max-width:1180px;min-height:100svh;margin:auto;padding:26px 32px 32px;display:grid;grid-template-rows:auto 1fr auto}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:1px solid rgba(45,33,21,.45);padding:4px 0 13px}
+.brand{flex:0 0 auto;white-space:nowrap;font:600 27px Caveat,cursive;text-decoration:none}
+.links{display:flex;align-items:center;gap:18px;min-width:0;white-space:nowrap}
+.links a{font:20px Caveat,cursive;text-decoration:none}
+.links a:hover,.actions a:hover{text-decoration:underline}
+.theme-toggle{border:1px solid rgba(45,33,21,.65);background:rgba(255,240,190,.08);color:inherit;padding:8px 12px;font:600 16px Caveat,cursive;cursor:pointer;flex:0 0 auto;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.theme-toggle:hover{background:rgba(45,33,21,.08)}
+.theme-icon{font-family:monospace;font-size:18px}
+.error-page{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);align-items:center;gap:clamp(28px,7vw,90px);padding:clamp(60px,10vh,110px) 0}
+.error-code{margin:0 0 24px;font:21px Caveat,cursive;color:var(--faint);transform:rotate(-1deg)}
+h1{font:600 clamp(68px,9vw,118px)/.82 Caveat,cursive;margin:0 0 30px;letter-spacing:-4px}
+.lead{max-width:500px;margin:0;font-size:24px;line-height:1.35}
+.actions{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;font:22px Caveat,cursive}
+.actions a{color:inherit}
+.plot{position:relative;width:100%;margin:0;transform:rotate(.4deg)}
+.plot svg{display:block;width:100%;height:auto;filter:sepia(1) contrast(.9);opacity:.9}
+.plot figcaption{text-align:center;font:20px Caveat,cursive;color:var(--faint);transform:rotate(-2deg)}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;padding-top:22px;border-top:1px solid rgba(45,33,21,.45);font:20px Caveat,cursive}
+body.blueprint{--ink:#d8f4ff;--faint:#79c8e8;--paper:#07141f;--paper2:#0a2233;color:var(--ink);background:radial-gradient(circle at 75% 22%,rgba(31,166,215,.14),transparent 24%),radial-gradient(circle at 20% 78%,rgba(0,112,160,.10),transparent 28%),linear-gradient(rgba(70,177,214,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(70,177,214,.075) 1px,transparent 1px),linear-gradient(rgba(70,177,214,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(70,177,214,.025) 1px,transparent 1px),linear-gradient(120deg,#06111b,#092638 55%,#06131e);background-size:auto,auto,40px 40px,40px 40px,8px 8px,8px 8px,auto}
+body.blueprint:before{opacity:.16;mix-blend-mode:screen;background-image:radial-gradient(circle at center,rgba(113,222,255,.35) 0 1px,transparent 1.5px);background-size:20px 20px}
+body.blueprint nav,body.blueprint .footer{border-color:rgba(112,213,245,.35)}
+body.blueprint .theme-toggle{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;letter-spacing:.12em;border-color:rgba(106,214,249,.65);background:rgba(24,123,160,.10);box-shadow:inset 0 0 16px rgba(62,197,239,.06)}
+body.blueprint .theme-toggle:hover{background:rgba(54,186,226,.16)}
+body.blueprint .brand,body.blueprint .links a,body.blueprint .error-code,body.blueprint h1,body.blueprint .actions,body.blueprint .plot figcaption,body.blueprint .footer{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em}
+body.blueprint h1{text-transform:uppercase;font-weight:400;line-height:.9;letter-spacing:-.055em;text-shadow:0 0 20px rgba(93,217,255,.12)}
+body.blueprint .error-code{transform:none;text-transform:uppercase;font-size:13px;letter-spacing:.12em}
+body.blueprint .actions{font-size:13px;text-transform:uppercase;letter-spacing:.09em}
+body.blueprint .plot svg{filter:none;opacity:.9}
+body.blueprint .plot [stroke="#2d2115"]{stroke:#9be8ff}
+body.blueprint .plot [fill="#2d2115"]{fill:#b8efff}
+body.blueprint .footer:before{content:"SYSTEM STATUS: ROUTE UNRESOLVED  //  ";color:var(--faint)}
+@media(max-width:1200px){nav{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 24px}.links{grid-column:1/-1;grid-row:2;justify-content:space-between}.theme-toggle{justify-self:end}}
+@media(max-width:800px){.error-page{grid-template-columns:1fr;padding:60px 0 45px}.plot{width:min(100%,560px);margin:auto}}
+@media(max-width:650px){nav{gap:10px}.brand{min-width:0;font-size:20px;line-height:1}.links,#themeLabel{display:none}.theme-toggle{width:42px;min-width:0;padding:7px;justify-content:center}}
+@media(max-width:600px){.wrap{width:100%;padding:18px}.error-page{padding:54px 0 40px}h1{font-size:clamp(60px,19vw,78px);line-height:.88;letter-spacing:-3px}.lead{font-size:22px}.actions{font-size:20px}.footer{gap:16px;flex-direction:column}.plot figcaption{font-size:18px}body.blueprint h1{line-height:1.02}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
 </head>
 <body>
-    <header class="masthead page-width">
-        <a class="site-id" href="/">
-            <span class="signal" aria-hidden="true"></span>
-            <span>FS / Research index</span>
-        </a>
-        <span>Archive notice</span>
-    </header>
-    <main class="error-page page-width">
-        <p class="error-code">Error / 404</p>
-        <h1>Record<br>not found.</h1>
-        <p class="error-copy">The requested page is not part of this archive. Return to the research index or contact Fernando.</p>
-        <nav class="error-actions" aria-label="Error page actions">
-            <a href="/">Research index →</a>
-            <a href="mailto:fernando.silveira@inf.ufrgs.br">Email Fernando →</a>
-        </nav>
-    </main>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Primary navigation">
+ <a class="brand" href="/">KAVINSKY / FIELD NOTES</a>
+ <div class="links"><a href="/#about">about</a><a href="/#research">research</a><a href="/#education">education</a><a href="/#work">projects</a><a href="/#aero">aero</a><a href="/#contact">contact</a></div>
+ <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to Blueprint theme" aria-pressed="false"><span class="theme-icon">⌖</span><span id="themeLabel">BLUEPRINT MODE</span></button>
+</nav>
+
+<main class="error-page" id="content">
+ <div>
+  <p class="error-code">folio 404 — unresolved coordinate</p>
+  <h1>Field note<br>not found.</h1>
+  <p class="lead">This page has drifted outside the mapped archive. Return to the index or send a signal if something should be here.</p>
+  <div class="actions"><a href="/">← research index</a><a href="mailto:fernando.silveira@inf.ufrgs.br">email Fernando →</a></div>
+ </div>
+ <figure class="plot" aria-label="Technical sketch of a missing coordinate">
+  <svg viewBox="0 0 650 520" role="img">
+   <title>An unresolved coordinate outside a plotted field</title>
+   <g fill="none" stroke="#2d2115" stroke-width="2">
+    <circle cx="325" cy="260" r="155"/><circle cx="325" cy="260" r="112"/><circle cx="325" cy="260" r="42" stroke-dasharray="8 9"/>
+    <path d="M72 260H578M325 28V492M145 80L505 440M145 440L505 80" opacity=".55"/>
+    <ellipse cx="325" cy="260" rx="238" ry="78" transform="rotate(-18 325 260)"/>
+    <ellipse cx="325" cy="260" rx="238" ry="78" transform="rotate(54 325 260)"/>
+    <path d="M325 260C390 184 455 146 540 138" stroke-dasharray="10 10"/>
+    <path d="M526 125l28 13-24 19M309 244l32 32M341 244l-32 32" stroke-width="3"/>
+    <g stroke-width="1"><path d="M56 54h132M56 63h92M468 462h126M502 471h92"/></g>
+   </g>
+   <g fill="#2d2115" font-family="Caveat, cursive" font-size="21">
+    <text x="53" y="45">archive boundary</text><text x="465" y="115">last known path</text>
+    <text x="346" y="250">x = undefined</text><text x="449" y="500">ERR / 404</text>
+   </g>
+  </svg>
+  <figcaption>fig. 0 — a coordinate with no corresponding record</figcaption>
+ </figure>
+</main>
+
+<div class="footer"><span>Fernando “Kavinsky” Silveira · Porto Alegre — Brazil</span><span>folio rev. 09 / 2026</span></div>
+</div>
+
+<script>
+(() => {
+  const btn = document.getElementById('themeToggle');
+  const label = document.getElementById('themeLabel');
+  const icon = btn.querySelector('.theme-icon');
+  const themeColor = document.getElementById('themeColor');
+
+  function setTheme(theme) {
+    const blueprint = theme === 'blueprint';
+    document.body.classList.toggle('blueprint', blueprint);
+    label.textContent = blueprint ? 'RENAISSANCE MODE' : 'BLUEPRINT MODE';
+    icon.textContent = blueprint ? '✎' : '⌖';
+    btn.setAttribute('aria-pressed', String(blueprint));
+    btn.setAttribute('aria-label', blueprint ? 'Switch to Renaissance theme' : 'Switch to Blueprint theme');
+    themeColor.content = blueprint ? '#07141f' : '#c7a66e';
+    try { localStorage.setItem('kavinsky-theme', theme); } catch (error) {}
+  }
+
+  let saved = 'renaissance';
+  try { saved = localStorage.getItem('kavinsky-theme') || 'renaissance'; } catch (error) {}
+  setTheme(saved);
+  btn.addEventListener('click', () => setTheme(document.body.classList.contains('blueprint') ? 'renaissance' : 'blueprint'));
+})();
+</script>
 </body>
 </html>

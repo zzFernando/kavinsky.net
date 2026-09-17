@@ -7,7 +7,7 @@ Personal research index for Fernando “Kavinsky” Silveira. The site is a stat
 - `index.html` — homepage content and metadata
 - `styles.css` — responsive editorial design system
 - `404.html` — matching not-found page
-- `assets/images/` — portraits, research figures, and project imagery
+- `assets/images/` — published portraits, research figures, and project imagery
 - `firebase.json` — Firebase Hosting configuration and cache rules
 
 ## Local preview
