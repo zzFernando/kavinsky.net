@@ -1,437 +1,393 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando "Kavinsky" Silveira — AI Researcher in Neuroevolution & XAI</title>
-    <meta name="description" content="Fernando Silveira is an AI researcher at UFRGS specializing in neuroevolution, explainable AI, and visual analytics of neural network weight spaces.">
-    <meta name="author" content="Fernando Silveira">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://kavinsky.net/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kavinsky — Field Notes</title>
+<meta name="description" content="Fernando “Kavinsky” Silveira is an AI researcher and engineer working with neuroevolution, explainable AI, visual analytics and reliable research software.">
+<meta name="author" content="Fernando Silveira">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#c7a66e" id="themeColor">
+<link rel="canonical" href="https://kavinsky.net/">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Fernando &quot;Kavinsky&quot; Silveira — AI Researcher">
-    <meta property="og:description" content="AI researcher at UFRGS specializing in neuroevolution, explainable AI, and visual analytics of neural network weight spaces.">
-    <meta property="og:image" content="https://kavinsky.net/assets/images/profile_pic.jpeg">
-    <meta property="og:url" content="https://kavinsky.net/">
-    <meta property="og:site_name" content="Fernando Silveira — AI Researcher">
-    <meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kavinsky — Field Notes">
+<meta property="og:description" content="AI research, engineering, aviation systems and sound by Fernando “Kavinsky” Silveira.">
+<meta property="og:image" content="https://kavinsky.net/assets/images/profile_pic.jpeg">
+<meta property="og:url" content="https://kavinsky.net/">
+<meta property="og:site_name" content="Fernando Silveira">
+<meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fernando &quot;Kavinsky&quot; Silveira — AI Researcher">
-    <meta name="twitter:description" content="AI researcher at UFRGS specializing in neuroevolution, explainable AI, and visual analytics.">
-    <meta name="twitter:image" content="https://kavinsky.net/assets/images/profile_pic.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kavinsky — Field Notes">
+<meta name="twitter:description" content="AI research, engineering, aviation systems and sound by Fernando “Kavinsky” Silveira.">
+<meta name="twitter:image" content="https://kavinsky.net/assets/images/profile_pic.jpeg">
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Fernando Silveira",
-        "alternateName": "Kavinsky",
-        "url": "https://kavinsky.net/",
-        "image": "https://kavinsky.net/assets/images/profile_pic.jpeg",
-        "jobTitle": "AI Researcher",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Federal University of Rio Grande do Sul",
-            "alternateName": "UFRGS"
-        },
-        "alumniOf": [
-            {
-                "@type": "Organization",
-                "name": "Federal University of Rio Grande do Sul",
-                "alternateName": "UFRGS"
-            }
-        ],
-        "sameAs": [
-            "https://github.com/zzFernando",
-            "https://linkedin.com/in/zzfernando",
-            "http://lattes.cnpq.br/6508343705598182",
-            "https://orcid.org/0009-0005-8188-7807"
-        ],
-        "knowsAbout": [
-            "Neuroevolution",
-            "Explainable AI",
-            "Machine Learning",
-            "Visual Analytics",
-            "Neural Networks",
-            "Evolutionary Computation"
-        ]
-    }
-    </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Fernando Silveira","alternateName":"Kavinsky","url":"https://kavinsky.net/","image":"https://kavinsky.net/assets/images/profile_pic.jpeg","jobTitle":"AI Researcher","worksFor":{"@type":"Organization","name":"Federal University of Rio Grande do Sul","alternateName":"UFRGS"},"sameAs":["https://github.com/zzFernando","https://linkedin.com/in/zzfernando","http://lattes.cnpq.br/6508343705598182","https://orcid.org/0009-0005-8188-7807"]}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap');
+:root{--ink:#2d2115;--faint:#715c40;--paper:#c7a66e;--paper2:#d6ba82}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.skip-link{position:fixed;left:16px;top:16px;z-index:10;padding:9px 13px;color:var(--ink);background:var(--paper2);border:1px solid;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+body{
+ margin:0;color:var(--ink);font-family:"Cormorant Garamond",serif;
+ background:
+ radial-gradient(circle at 20% 10%,rgba(255,245,196,.32),transparent 22%),
+ radial-gradient(circle at 80% 45%,rgba(89,53,24,.11),transparent 25%),
+ repeating-linear-gradient(0deg,rgba(60,35,15,.025) 0 1px,transparent 1px 4px),
+ linear-gradient(100deg,var(--paper2),var(--paper) 47%,#d2b47b);
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")
+}
+.wrap{max-width:1180px;margin:auto;padding:26px 32px 70px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:1px solid rgba(45,33,21,.45);padding:4px 0 13px}
+.brand{flex:0 0 auto;white-space:nowrap;font:600 27px Caveat,cursive;color:inherit;text-decoration:none}
+.links{display:flex;align-items:center;gap:18px;min-width:0;white-space:nowrap}
+.links a{color:inherit;text-decoration:none;margin-left:0;font:20px Caveat,cursive}
+.links a:hover{text-decoration:underline}
+.hero{min-height:690px;display:grid;grid-template-columns:.88fr 1.12fr;align-items:center;gap:28px;position:relative}
+.hero>div:first-child{min-width:0}
+.kicker{display:block;margin-bottom:34px;font:22px/1.25 Caveat,cursive;color:var(--faint);transform:rotate(-1deg);transform-origin:left bottom}
+h1{font:600 clamp(64px,9vw,126px)/.9 Caveat,cursive;margin:0 0 34px;letter-spacing:-4px}
+.lead{font-size:24px;max-width:520px;line-height:1.35}
+.note{font:22px Caveat,cursive;margin-top:30px;transform:rotate(-1deg);display:inline-block;border-bottom:1px solid}
+.sketch{width:100%;filter:sepia(1) contrast(.9);opacity:.9}
+.arrow{font:24px Caveat,cursive;position:absolute;right:0;bottom:26px;width:52%;text-align:center;transform:rotate(-4deg)}
+.section{border-top:1px solid rgba(45,33,21,.5);padding:55px 0}
+.section h2{font:600 48px Caveat,cursive;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{min-height:230px;border:1px solid rgba(45,33,21,.55);padding:24px;position:relative;background:rgba(255,240,190,.08);transform:rotate(-.35deg)}
+.card:nth-child(2){transform:rotate(.45deg)}
+.card:nth-child(3){transform:rotate(-.15deg)}
+.num{z-index:2;font:24px Caveat,cursive;position:absolute;right:14px;top:8px;border:1px solid;border-radius:50%;width:35px;height:35px;text-align:center;background:var(--paper)}
+.card h3{font:600 29px Caveat,cursive;margin:8px 0;padding-right:48px;line-height:1.2}
+.card p{font-size:19px;line-height:1.35}
+.diagram{height:70px;width:100%;margin-top:12px}
+.footer{font:20px Caveat,cursive;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;padding-top:30px}
+.media-frame{position:relative;margin:0;border:1px solid rgba(45,33,21,.55);padding:8px;background:rgba(255,240,190,.08);transform:rotate(.35deg)}
+.media-frame img{display:block;width:100%;height:auto;object-fit:cover;filter:grayscale(.15) sepia(.55) contrast(.92);mix-blend-mode:multiply}
+.media-frame figcaption{padding:7px 3px 1px;font:18px Caveat,cursive;color:var(--faint)}
+.portrait-frame{margin:0 0 22px;transform:rotate(-1deg)}
+.portrait-frame img{aspect-ratio:1;object-position:center}
+.aero-frame{transform:rotate(.55deg)}
+.aero-frame img{aspect-ratio:3/2}
+#about .card>.num{position:static;float:right;margin:0 0 8px 12px}
+.contact-links{display:flex;align-items:center;flex-wrap:wrap;gap:5px 10px;max-width:100%;transform:none}
+.contact-links a{overflow-wrap:anywhere}
 
-    <!-- Preconnect for CDNs -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+.theme-toggle{
+  border:1px solid rgba(45,33,21,.65);background:rgba(255,240,190,.08);
+  color:inherit;padding:8px 12px;font:600 16px Caveat,cursive;cursor:pointer;
+  flex:0 0 auto;letter-spacing:.04em;display:flex;align-items:center;gap:8px;
+}
+.theme-toggle:hover{background:rgba(45,33,21,.08)}
+.theme-icon{font-family:monospace;font-size:18px}
 
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+/* ───────── BLUEPRINT / NASA × STARK LAB ───────── */
+body.blueprint{
+ --ink:#d8f4ff;--faint:#79c8e8;--paper:#07141f;--paper2:#0a2233;
+ color:var(--ink);
+ background:
+ radial-gradient(circle at 75% 22%,rgba(31,166,215,.14),transparent 24%),
+ radial-gradient(circle at 20% 78%,rgba(0,112,160,.10),transparent 28%),
+ linear-gradient(rgba(70,177,214,.075) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(70,177,214,.075) 1px,transparent 1px),
+ linear-gradient(rgba(70,177,214,.025) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(70,177,214,.025) 1px,transparent 1px),
+ linear-gradient(120deg,#06111b,#092638 55%,#06131e);
+ background-size:auto,auto,40px 40px,40px 40px,8px 8px,8px 8px,auto;
+}
+body.blueprint:before{
+ opacity:.16;mix-blend-mode:screen;
+ background-image:
+ radial-gradient(circle at center,rgba(113,222,255,.35) 0 1px,transparent 1.5px);
+ background-size:20px 20px;
+}
+body.blueprint nav,
+body.blueprint .section{border-color:rgba(112,213,245,.35)}
+body.blueprint .theme-toggle{
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+ font-size:11px;letter-spacing:.12em;border-color:rgba(106,214,249,.65);
+ background:rgba(24,123,160,.10);box-shadow:inset 0 0 16px rgba(62,197,239,.06);
+}
+body.blueprint .theme-toggle:hover{background:rgba(54,186,226,.16)}
+body.blueprint .brand,
+body.blueprint .links a,
+body.blueprint .kicker,
+body.blueprint h1,
+body.blueprint .note,
+body.blueprint .section h2,
+body.blueprint .card h3,
+body.blueprint .footer,
+body.blueprint .arrow{
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+ letter-spacing:.04em;
+}
+body.blueprint h1{
+ text-transform:uppercase;font-weight:400;line-height:1;letter-spacing:-.055em;
+ text-shadow:0 0 20px rgba(93,217,255,.12)
+}
+body.blueprint .section h2{
+ text-transform:uppercase;font-size:34px;font-weight:400;letter-spacing:.08em
+}
+body.blueprint .section h2:before{content:"SYS // ";color:var(--faint);font-size:.58em}
+body.blueprint .card{
+ transform:none!important;background:rgba(7,35,49,.35);
+ border-color:rgba(107,207,239,.42);
+ box-shadow:inset 0 0 24px rgba(44,184,224,.035);
+ clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%);
+}
+body.blueprint .card:after{
+ content:"";position:absolute;right:0;top:0;width:15px;height:15px;
+ border-left:1px solid rgba(107,207,239,.42)
+}
+body.blueprint .num{border-radius:0;border-color:rgba(107,207,239,.55);font-family:monospace;background:var(--paper)}
+body.blueprint .sketch{filter:none;opacity:.9}
+body.blueprint .media-frame{transform:none;border-color:rgba(107,207,239,.42);background:rgba(7,35,49,.35);clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%)}
+body.blueprint .media-frame:before{content:attr(data-label);position:absolute;z-index:1;top:16px;left:16px;padding:4px 6px;background:rgba(5,24,34,.78);border:1px solid rgba(107,207,239,.45);font:9px ui-monospace,monospace;letter-spacing:.12em;color:#bcefff}
+body.blueprint .media-frame img{filter:grayscale(1) sepia(1) hue-rotate(145deg) saturate(2.2) contrast(1.12) brightness(.74);mix-blend-mode:screen;opacity:.82}
+body.blueprint .media-frame figcaption{font:11px ui-monospace,monospace;letter-spacing:.08em;color:var(--faint)}
+body.blueprint svg [stroke="#2d2115"]{stroke:#9be8ff}
+body.blueprint svg [fill="#2d2115"]{fill:#b8efff}
+body.blueprint .diagram [stroke="#2d2115"]{stroke:#9be8ff}
+body.blueprint a{color:#bcefff}
+body.blueprint .lead{font-family:"Cormorant Garamond",serif}
+body.blueprint .note{
+ border:1px solid rgba(100,207,241,.38);padding:8px 12px;
+ background:rgba(31,151,190,.07);transform:none
+}
+body.blueprint .footer:before{content:"SYSTEM STATUS: NOMINAL  //  ";color:var(--faint)}
+body.blueprint .art{position:relative}
+body.blueprint .art:after{
+ content:"VISUAL ANALYTICS // WEIGHT-SPACE TELEMETRY";
+ position:absolute;right:2%;bottom:4%;font:10px ui-monospace,monospace;
+ letter-spacing:.12em;color:var(--faint);border-top:1px solid;padding-top:5px
+}
+
+@media(max-width:1200px){
+ nav{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 24px}
+ .links{grid-column:1/-1;grid-row:2;justify-content:space-between}
+ .links a{margin-left:0}
+ .theme-toggle{justify-self:end}
+}
+@media(max-width:900px){
+ section>div[style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+ .hero{width:100%;grid-template-columns:minmax(0,1fr);min-height:auto;padding:60px 0}
+ .hero>*,.hero>div,.lead,.note,.kicker{min-width:0;max-width:100%;overflow-wrap:anywhere}
+ .hero .art{width:min(100%,650px);margin:0 auto}
+ .arrow{display:none}
+ .grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:650px){
+ nav{gap:10px}
+ .brand{min-width:0;font-size:20px;line-height:1}
+ .links,#themeLabel{display:none}
+ .theme-toggle{width:42px;min-width:0;padding:7px;justify-content:center}
+}
+@media(max-width:600px){
+ .wrap{width:100%;padding:18px}
+ .hero{padding:54px 0}
+ .kicker{font-size:19px;line-height:1.35;margin-bottom:16px;transform:none}
+ h1{font-size:clamp(58px,18vw,72px);line-height:.95;letter-spacing:-3px;margin-bottom:30px}
+ body.blueprint h1{line-height:1.05;letter-spacing:-.04em}
+ .lead{font-size:22px}
+ .note{display:block;font-size:20px;line-height:1.25}
+ .section{padding:46px 0}
+ .section h2{font-size:clamp(38px,11vw,48px);line-height:1.08}
+ body.blueprint .section h2{font-size:clamp(27px,8vw,32px);line-height:1.2;overflow-wrap:anywhere}
+ .card h3{font-size:27px;padding-right:48px}
+ body.blueprint .card h3{font-size:24px;line-height:1.3}
+ .sketch{display:block;width:100%;max-width:100%}
+ .footer{gap:16px;flex-direction:column}
+ .contact-links{gap:8px 10px}
+}
+@media(max-width:380px){
+ .brand{max-width:190px;white-space:normal;line-height:.95}
+ h1{font-size:56px}
+ .section h2{font-size:38px}
+ body.blueprint .section h2{font-size:27px}
+ .lead{font-size:21px}
+ .note{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="vault-header">
-            <div class="vault-seal">☢</div>
-            <div class="hero-profile-pic">
-                <picture>
-                    <source srcset="assets/images/profile_pic.webp" type="image/webp">
-                    <img src="assets/images/profile_pic.jpeg" alt="Fernando Silveira">
-                </picture>
-            </div>
-            <h1 class="glitch" data-text="FERNANDO &quot;KAVINSKY&quot; SILVEIRA">FERNANDO <span class="kavinsky-name">&quot;KAVINSKY&quot;</span> SILVEIRA</h1>
-            <p class="vault-subtitle">AI Researcher · Neuroevolution · XAI · Visual Analytics</p>
-            <p class="vault-affiliation">UFRGS · INF · ExpLAIn</p>
-            <div class="hero-social">
-                <a href="https://github.com/zzFernando" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/zzfernando" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:fernando.silveira@inf.ufrgs.br" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="http://lattes.cnpq.br/6508343705598182" target="_blank" rel="noopener noreferrer" aria-label="Currículo Lattes"><i class="ai ai-lattes"></i></a>
-                <a href="https://orcid.org/0009-0005-8188-7807" target="_blank" rel="noopener noreferrer" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
-            </div>
-            <button id="color-toggle" class="color-toggle" title="Toggle Color Theme">
-                <span class="toggle-icon">☢</span>
-                <span class="toggle-label">AMBER</span>
-            </button>
-        </header>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Primary navigation"><a class="brand" href="#top">KAVINSKY / FIELD NOTES</a><div class="links"><a href="#about">about</a><a href="#research">research</a><a href="#education">education</a><a href="#work">projects</a><a href="#aero">aero</a><a href="#contact">contact</a></div><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to Blueprint theme" aria-pressed="false">
+      <span class="theme-icon">⌖</span><span id="themeLabel">BLUEPRINT MODE</span>
+    </button></nav>
 
-        <!-- Main Content -->
-        <main class="vault-main">
-            <!-- Terminal Screen -->
-            <div class="terminal-screen">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <span>ROBCO INDUSTRIES (TM) TERMINAL</span>
-                    <span>v3.1.2</span>
-                </div>
+<main id="content">
+<section class="hero" id="top" aria-labelledby="pageTitle">
+ <div>
+  <div class="kicker">folio 01 — engineering / research / sound</div>
+  <h1 id="pageTitle">Fernando<br>Kavinsky</h1>
+  <div class="lead">AI researcher and engineer studying neuroevolution, explainable AI and visual analytics — with a parallel obsession for aviation, systems engineering and music.</div>
+  <div class="note">M.Sc. researcher · software engineer · aviation student · musician →</div>
+ </div>
+ <div class="art">
+  <svg class="sketch" viewBox="0 0 650 650" aria-label="technical sketch">
+   <g fill="none" stroke="#2d2115" stroke-width="2">
+    <circle cx="340" cy="325" r="182"/><circle cx="340" cy="325" r="146"/><circle cx="340" cy="325" r="72"/>
+    <path d="M93 325H590M340 78V575M155 140L525 510M155 510L525 140"/>
+    <ellipse cx="340" cy="325" rx="220" ry="85" transform="rotate(-18 340 325)"/>
+    <ellipse cx="340" cy="325" rx="220" ry="85" transform="rotate(52 340 325)"/>
+    <path d="M340 325 C380 225 455 185 520 175 M340 325 C245 365 195 430 178 505"/>
+    <path d="M500 150l50-24m-35 57l58-2M160 500l-65 28m83 4l-43 46"/>
+    <g stroke-width="1"><path d="M116 116l100 0M116 125h76M470 540h92M490 550h72"/></g>
+   </g>
+   <g fill="#2d2115" font-family="Caveat, cursive" font-size="22">
+    <text x="64" y="104">latent geometry</text><text x="474" y="120">trajectory</text>
+    <text x="395" y="585">UFRGS · ExpLAIn / 2026</text><text x="67" y="560">redistribution field</text>
+    <text x="360" y="315">x(t)</text>
+   </g>
+  </svg>
+ </div>
+ <div class="arrow">fig. 1 — things moving through spaces</div>
+</section>
 
-                <!-- About -->
-                <section class="terminal-section" id="about">
-                    <h2 class="terminal-title">[ > ] ABOUT</h2>
-                    <div class="about-text">
-                        <p class="terminal-text">
-                            I am an engineer and M.Sc. researcher in Artificial Intelligence at the Federal University of Rio Grande do Sul (UFRGS).
-                            My work focuses on neuroevolution, population-based learning, and the visualization of learning dynamics
-                            in neural network weight spaces.
-                        </p>
-                        <p class="terminal-text">
-                            My background spans software engineering, aeronautical sciences, and machine learning, with emphasis on
-                            interpretable, reliable, and reproducible AI systems for scientific and safety-critical domains.
-                        </p>
-                    </div>
-                </section>
+<section class="section" id="work">
+ <h2>Selected apparatus & experiments</h2>
+ <div class="grid">
+  <article class="card"><div class="num">I</div><h3>Neuroevolution Viz</h3><p>Visual analytics for population dynamics in neural-network weight space. Projection, transport and vector fields.</p>
+   <svg class="diagram" viewBox="0 0 250 70"><g fill="none" stroke="#2d2115"><path d="M8 50C45 10 65 62 100 28s55 22 91-8 48 12 52 16"/><path d="M18 59l15-13m25 5 15-14m36 3 16-15m34 11 17-15"/></g></svg>
+  </article>
+  <article class="card"><div class="num">II</div><h3>Cloud & Systems</h3><p>Infrastructure, automation and distributed systems designed to survive contact with reality.</p>
+   <svg class="diagram" viewBox="0 0 250 70"><g fill="none" stroke="#2d2115"><rect x="15" y="20" width="48" height="30"/><rect x="101" y="7" width="48" height="30"/><rect x="187" y="30" width="48" height="30"/><path d="M63 35l38-13m48 3 38 19"/></g></svg>
+  </article>
+  <article class="card"><div class="num">III</div><h3>Sound</h3><p>Records, live shows and unfinished ideas. An engineering problem with considerably more feedback.</p>
+   <svg class="diagram" viewBox="0 0 250 70"><path fill="none" stroke="#2d2115" d="M4 38h17l7-19 9 39 11-32 12 20 11-8h14l8-23 12 46 13-37 10 21 15-7h18l8-17 11 32 12-24 10 9h39"/></svg>
+  </article>
+ </div>
+</section>
 
-                <!-- Currently Investigating -->
-                <section class="terminal-section" id="investigating">
-                    <h2 class="terminal-title">[ > ] CURRENTLY INVESTIGATING</h2>
-                    <p class="terminal-text">
-                        Understanding how neural populations evolve through weight space.
-                    </p>
-                    <ul class="terminal-list">
-                        <li>Neuroevolutionary population dynamics</li>
-                        <li>Population trajectory alignment in weight space</li>
-                        <li>Weight-space manifold visualization</li>
-                        <li>Interpretable evolutionary systems</li>
-                    </ul>
-                </section>
+<section class="section" id="about">
+ <h2>About the operator</h2>
+ <div style="display:grid;grid-template-columns:1.3fr .7fr;gap:38px">
+  <div>
+   <p class="lead">Engineer and M.Sc. researcher in Artificial Intelligence at the Federal University of Rio Grande do Sul (UFRGS), working with the ExpLAIn laboratory. My research focuses on how populations of neural networks move, reorganize and converge through high-dimensional weight spaces.</p>
+   <p style="font-size:20px;line-height:1.5">My background crosses software engineering, machine learning, distributed systems and aeronautical sciences. I am especially interested in methods that make complex learning systems observable, interpretable and reproducible — particularly where reliability matters.</p>
+  </div>
+  <div class="card" style="min-height:auto">
+   <figure class="media-frame portrait-frame" data-label="ID // OPERATOR 01">
+    <img src="1789641169776.jpg" width="400" height="400" alt="Portrait of Fernando Silveira wearing glasses" loading="lazy">
+    <figcaption>operator portrait / visual record 01</figcaption>
+   </figure>
+   <div class="num">☉</div><h3>Field identification</h3>
+   <p><b>Affiliation</b><br>UFRGS · INF · ExpLAIn</p>
+   <p><b>Discipline</b><br>Artificial Intelligence</p>
+   <p><b>Coordinates</b><br>Porto Alegre · Brazil</p>
+   <p><b>Current state</b><br>Graduate Researcher</p>
+  </div>
+ </div>
+</section>
 
-                <!-- Education -->
-                <section class="terminal-section" id="education">
-                    <h2 class="terminal-title">[ > ] EDUCATION</h2>
-                    <div class="terminal-split">
-                        <div class="terminal-split-text">
-                            <div class="edu-entry">
-                                <p class="terminal-text"><strong>M.Sc. in Artificial Intelligence</strong> — UFRGS</p>
-                                <p class="terminal-text">Research on neuroevolutionary population dynamics in neural network weight spaces using dimensionality reduction, temporal alignment, and vector field analysis.</p>
-                            </div>
-                            <div class="edu-entry">
-                                <p class="terminal-text"><strong>B.Sc. in Software Engineering</strong></p>
-                                <p class="terminal-text">Software systems design, distributed systems, and engineering methodologies.</p>
-                            </div>
-                            <div class="edu-entry">
-                                <p class="terminal-text"><strong>B.Sc. in Aeronautical Sciences</strong></p>
-                                <p class="terminal-text">Aviation systems, operational safety, and aeronautical analysis.</p>
-                            </div>
-                            <div class="edu-entry">
-                                <p class="terminal-text"><strong>B.Sc. in Systems Analysis and Development</strong></p>
-                                <p class="terminal-text">Software development and information systems.</p>
-                            </div>
-                            <div class="edu-entry">
-                                <p class="terminal-text"><strong>Postgraduate Studies</strong></p>
-                                <p class="terminal-text">Data Science · Business Intelligence · Process Management · Project Management</p>
-                            </div>
-                        </div>
-                        <div class="terminal-split-image">
-                            <picture>
-                                <source srcset="assets/images/education.webp" type="image/webp">
-                                <img src="assets/images/education.png" alt="Education" loading="lazy">
-                            </picture>
-                        </div>
-                    </div>
-                </section>
+<section class="section" id="research">
+ <h2>Current investigation</h2>
+ <div style="display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center">
+  <svg class="sketch" viewBox="0 0 500 350">
+   <g fill="none" stroke="#2d2115" stroke-width="1.5">
+    <path d="M35 270C90 230 105 115 180 155s65 112 135 58 70-126 145-105"/>
+    <path d="M38 287C105 252 118 144 188 178s64 102 130 61 77-110 139-94"/>
+    <circle cx="82" cy="238" r="5"/><circle cx="147" cy="166" r="5"/><circle cx="222" cy="204" r="5"/><circle cx="315" cy="213" r="5"/><circle cx="407" cy="121" r="5"/>
+    <path d="M72 222l10 16 17-3M137 151l10 15 17-5M300 202l15 11 12-15M391 120l16 1 4-16"/>
+    <path d="M30 300H465M30 300V40" stroke-width=".7"/>
+   </g>
+   <g fill="#2d2115" font-family="Caveat, cursive" font-size="19"><text x="40" y="28">population redistribution over generations</text><text x="330" y="335">generation →</text><text x="18" y="285" transform="rotate(-90 18 285)">projected weight space</text></g>
+  </svg>
+  <div>
+   <p class="lead">Understanding how neural populations evolve through weight space.</p>
+   <p style="font-size:20px;line-height:1.55">The central problem: evolutionary algorithms produce populations rather than a single optimization trajectory. I investigate how dimensionality reduction, temporal alignment, optimal transport and vector-field representations can expose the redistribution of these populations over generations.</p>
+   <div class="note">neuroevolution · weight space · optimal transport · visual analytics</div>
+  </div>
+ </div>
+</section>
 
-                <!-- Research Interests -->
-                <section class="terminal-section" id="interests">
-                    <h2 class="terminal-title">[ > ] RESEARCH INTERESTS</h2>
-                    <div class="terminal-split-reverse">
-                        <div class="terminal-split-image">
-                            <picture>
-                                <source srcset="assets/images/tdc_pic.webp" type="image/webp">
-                                <img src="assets/images/tdc_pic.png" alt="Fernando presenting at TDC conference" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="terminal-split-text">
-                            <p class="terminal-text">
-                                My research explores neuroevolution, evolutionary computation, and the dynamics of learning in neural network parameter spaces. I am particularly interested in visualization methods for population-based learning systems, interpretable AI, and reliable machine learning for scientific and safety-critical applications.
-                            </p>
-                            <div class="tech-skills">
-                                <div class="grid-category">
-                                    <h4>Core Topics</h4>
-                                    <p>Neuroevolution · Evolutionary Computation · Machine Learning · Representation Dynamics</p>
-                                </div>
-                                <div class="grid-category">
-                                    <h4>Explainability & Visualization</h4>
-                                    <p>XAI · Weight Space Analysis · Dimensionality Reduction · Visual Analytics</p>
-                                </div>
-                                <div class="grid-category">
-                                    <h4>Applied Domains</h4>
-                                    <p>Aviation Systems · Bioinformatics · Scientific Computing</p>
-                                </div>
-                                <div class="grid-category">
-                                    <h4>Engineering</h4>
-                                    <p>Research Software · Reproducibility · ML Infrastructure</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<section class="section" id="education">
+ <h2>Training & formation</h2>
+ <div class="grid">
+  <article class="card"><div class="num">01</div><h3>M.Sc. Artificial Intelligence</h3><p><b>UFRGS</b><br>Neuroevolutionary population dynamics, dimensionality reduction, temporal alignment and visual analytics.</p></article>
+  <article class="card"><div class="num">02</div><h3>Software Engineering</h3><p>Software architecture, distributed systems, infrastructure and engineering methodologies.</p></article>
+  <article class="card"><div class="num">03</div><h3>Aeronautical Sciences</h3><p>Aviation systems, operations and safety. Private Pilot training in progress.</p></article>
+ </div>
+ <p class="note" style="margin-top:28px">also: Systems Analysis & Development · Data Science · BI · Process Management · Project Management</p>
+</section>
 
-                <!-- Tech Stack -->
-                <section class="terminal-section" id="techstack">
-                    <h2 class="terminal-title">[ > ] TECH STACK</h2>
-                    <div class="techstack-grid">
-                        <div class="grid-category">
-                            <h4>Languages & Frameworks</h4>
-                            <p>Python · PyTorch · JAX · TensorFlow · CUDA</p>
-                        </div>
-                        <div class="grid-category">
-                            <h4>Analysis & ML</h4>
-                            <p>UMAP · t-SNE · Scikit-learn · OpenCV · Pandas</p>
-                        </div>
-                        <div class="grid-category">
-                            <h4>Infrastructure</h4>
-                            <p>Docker · Linux · FastAPI · PostgreSQL · Git</p>
-                        </div>
-                        <div class="grid-category">
-                            <h4>Visualization</h4>
-                            <p>Matplotlib · Plotly · Streamlit · D3.js</p>
-                        </div>
-                    </div>
-                </section>
+<section class="section">
+ <h2>Research map</h2>
+ <div class="grid">
+  <article class="card"><h3>Core</h3><p>Neuroevolution<br>Evolutionary Computation<br>Machine Learning<br>Representation Dynamics</p></article>
+  <article class="card"><h3>Interpretability</h3><p>Explainable AI<br>Weight-space Analysis<br>Dimensionality Reduction<br>Visual Analytics</p></article>
+  <article class="card"><h3>Applied systems</h3><p>Aviation Systems<br>Bioinformatics<br>Scientific Computing<br>Research Software</p></article>
+ </div>
+</section>
 
-                <!-- Aeronautics -->
-                <section class="terminal-section" id="aeronautics">
-                    <h2 class="terminal-title">[ > ] AERONAUTICS</h2>
-                    <div class="terminal-split">
-                        <div class="terminal-split-text">
-                            <p class="terminal-text">
-                                Beyond artificial intelligence research, I maintain a strong interest in aeronautics, aviation systems, and aerospace engineering.
-                            </p>
-                            <p class="terminal-text">
-                                I am particularly interested in the intersection of AI and aviation, including autonomous systems, trajectory optimization, anomaly detection, and safety-critical decision support.
-                            </p>
-                            <p class="terminal-text">
-                                Aviation provides a unique environment for developing interpretable and reliable machine learning systems due to its operational complexity and strict safety requirements.
-                            </p>
-                            <p class="terminal-text">
-                                I am currently pursuing Private Pilot training while studying Aeronautical Sciences, connecting practical aviation experience with AI research and engineering.<span class="blink">_</span>
-                            </p>
-                        </div>
-                        <div class="terminal-split-image">
-                            <picture>
-                                <source srcset="assets/images/aero.webp" type="image/webp">
-                                <img src="assets/images/aero.png" alt="Aeronautics illustration" loading="lazy">
-                            </picture>
-                        </div>
-                    </div>
-                </section>
+<section class="section" id="aero">
+ <h2>Aeronautical notebook</h2>
+ <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center">
+  <div>
+   <p class="lead">Aviation is both a personal pursuit and a research domain.</p>
+   <p style="font-size:20px;line-height:1.5">I study Aeronautical Sciences and am pursuing Private Pilot training. The technical intersection is particularly interesting: autonomous systems, trajectory optimization, anomaly detection and interpretable decision support for safety-critical environments.</p>
+   <div class="note">AI × aviation → reliability before cleverness</div>
+  </div>
+  <figure class="media-frame aero-frame" data-label="AERO // CHECKLIST STUDY">
+   <img src="how-to-fly-a-jet-fighter-v0-LtX-NluCnc2zdQX8bazOCPg-WJmeqYqe_BaaKKsv0Ug.jpg" width="702" height="467" alt="Fighter pilot in a cockpit consulting a flight manual" loading="lazy">
+   <figcaption>cockpit study / procedure, attention & systems</figcaption>
+  </figure>
+ </div>
+</section>
 
-                <!-- Projects -->
-                <section class="terminal-section" id="projects">
-                    <h2 class="terminal-title">[ > ] PROJECTS</h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <picture>
-                                    <source srcset="assets/images/cumida.webp" type="image/webp">
-                                    <img src="assets/images/cumida.png" alt="CuMiDaVis Dashboard screenshot" loading="lazy">
-                                </picture>
-                            </div>
-                            <p class="project-name">CuMiDaVis</p>
-                            <p class="project-desc">Visual analytics dashboard for cancer microarray datasets using PCA, t-SNE, and UMAP for high-dimensional representation analysis.</p>
-                            <div class="project-actions">
-                                <a href="https://github.com/zzFernando/CuMiDaVis" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="https://cmdvis3.streamlit.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-rocket"></i> Demo</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <picture>
-                                    <source srcset="assets/images/gcp.webp" type="image/webp">
-                                    <img src="assets/images/gcp.png" alt="GeneCancerPredictor dashboard screenshot" loading="lazy">
-                                </picture>
-                            </div>
-                            <p class="project-name">GeneCancerPredictor</p>
-                            <p class="project-desc">Machine learning framework for hepatocellular carcinoma prediction comparing six classification models with hyperparameter optimization and evaluation pipelines.</p>
-                            <div class="project-actions">
-                                <a href="https://github.com/zzFernando/GeneCancerPredictor" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="https://gcp-analyzer.streamlit.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-rocket"></i> Demo</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <picture>
-                                    <source srcset="assets/images/neuro.webp" type="image/webp">
-                                    <img src="assets/images/neuro.png" alt="Neuroevo weight-space visualization screenshot" loading="lazy">
-                                </picture>
-                            </div>
-                            <p class="project-name">neuroevo-weight-space-viz</p>
-                            <p class="project-desc">Visualization framework for neuroevolutionary populations in neural network weight spaces using aligned UMAP embeddings, vector fields, and trajectory analysis.</p>
-                            <div class="project-actions">
-                                <a href="https://github.com/zzFernando/neuroevo-weight-space-viz" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="https://nwsviz.streamlit.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-rocket"></i> Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<section class="section">
+ <h2>Tools on the bench</h2>
+ <p class="lead">Python · PyTorch · JAX · TensorFlow · CUDA · UMAP · t-SNE · Scikit-learn · OpenCV · Pandas · Docker · Linux · FastAPI · PostgreSQL · Git · Matplotlib · Plotly · Streamlit · D3.js</p>
+</section>
 
-                <!-- Publications -->
-                <section class="terminal-section" id="publications">
-                    <h2 class="terminal-title">[ > ] PUBLICATIONS</h2>
-                    <p class="terminal-text">
-                        Publications and research manuscripts coming soon.
-                    </p>
-                    <p class="terminal-text"><strong>Current research topics:</strong></p>
-                    <ul class="terminal-list">
-                        <li>Neuroevolutionary population dynamics</li>
-                        <li>Weight space visualization</li>
-                        <li>Evolutionary representation analysis</li>
-                        <li>Explainable AI systems</li>
-                    </ul>
-                </section>
+<section class="section" id="contact">
+ <h2>Correspondence</h2>
+ <p class="lead">Open to research collaborations and work involving artificial intelligence, neuroevolution, visual analytics, scientific computing and aviation systems.</p>
+ <p class="note contact-links"><a style="color:inherit" href="mailto:fernando.silveira@inf.ufrgs.br">fernando.silveira@inf.ufrgs.br</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://github.com/zzFernando" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://linkedin.com/in/zzfernando" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+</section>
+</main>
 
-                <!-- Laboratory -->
-                <section class="terminal-section" id="laboratory">
-                    <h2 class="terminal-title">[ > ] LABORATORY</h2>
-                    <div class="terminal-split-reverse">
-                        <div class="terminal-split-image">
-                            <picture>
-                                <source srcset="assets/images/robot.webp" type="image/webp">
-                                <img src="assets/images/robot.png" alt="ExpLAIn Lab robot mascot" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="terminal-split-text">
-                            <p class="terminal-text"><strong>ExpLAIn – Explainability Laboratory for Artificial Intelligence</strong></p>
-                            <p class="terminal-text">Instituto de Informática – UFRGS, Porto Alegre, Brasil</p>
-                            <p class="terminal-text">Research group focused on interpretable, reliable, and responsible artificial intelligence systems.</p>
-                            <ul class="terminal-list">
-                                <li>Interpretable Machine Learning</li>
-                                <li>AI for Biology & Biomarker Discovery</li>
-                                <li>Evolutionary Optimization of Neural Networks</li>
-                                <li>Visual Analytics for AI Systems</li>
-                            </ul>
-                            <p class="terminal-text">Coordination: Prof. Bruno Iochins Grisci (PhD in Computer Science)</p>
-                            <div class="lab-links">
-                                <a href="https://www.linkedin.com/company/explainufrgs/" target="_blank" rel="noopener noreferrer" class="lab-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                                <a href="https://www.instagram.com/explain.ufrgs/" target="_blank" rel="noopener noreferrer" class="lab-link"><i class="fab fa-instagram"></i> Instagram</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<div class="footer"><span>Fernando “Kavinsky” Silveira · Porto Alegre — Brazil</span><span>folio rev. 09 / 2026</span></div>
+</div>
 
-                <!-- Contact -->
-                <section class="terminal-section" id="contact">
-                    <h2 class="terminal-title">[ > ] CONTACT</h2>
-                    <div class="terminal-split">
-                        <div class="terminal-split-text">
-                            <p class="terminal-text">
-                                Open to research collaborations, academic partnerships, and opportunities involving artificial intelligence, neuroevolution, visual analytics, and aviation systems.
-                            </p>
-                            <ul class="terminal-list">
-                                <li><strong>Email:</strong> <a href="mailto:fernando.silveira@inf.ufrgs.br">fernando.silveira@inf.ufrgs.br</a></li>
-                                <li><strong>GitHub:</strong> <a href="https://github.com/zzFernando" target="_blank" rel="noopener noreferrer">zzFernando</a></li>
-                                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/zzfernando" target="_blank" rel="noopener noreferrer">in/zzfernando</a></li>
-                            </ul>
-                        </div>
-                        <div class="terminal-split-image">
-                            <picture>
-                                <source srcset="assets/images/contact.webp" type="image/webp">
-                                <img src="assets/images/contact.png" alt="Contact illustration" loading="lazy">
-                            </picture>
-                        </div>
-                    </div>
-                </section>
+<script>
+(() => {
+  const btn = document.getElementById('themeToggle');
+  const label = document.getElementById('themeLabel');
+  const icon = btn.querySelector('.theme-icon');
+  const themeColor = document.getElementById('themeColor');
 
-                <!-- Footer -->
-                <section class="terminal-section footer-section">
-                    <p class="terminal-text gold-text">War. War never changes.</p>
-                    <p class="terminal-text">&copy; 2026 Fernando Silveira · UFRGS · ExpLAIn</p>
-                </section>
-            </div>
+  function setTheme(theme) {
+    const blueprint = theme === 'blueprint';
+    document.body.classList.toggle('blueprint', blueprint);
+    label.textContent = blueprint ? 'RENAISSANCE MODE' : 'BLUEPRINT MODE';
+    icon.textContent = blueprint ? '✎' : '⌖';
+    btn.setAttribute('aria-pressed', String(blueprint));
+    btn.setAttribute('aria-label', blueprint ? 'Switch to Renaissance theme' : 'Switch to Blueprint theme');
+    themeColor.content = blueprint ? '#07141f' : '#c7a66e';
+    try { localStorage.setItem('kavinsky-theme', theme); } catch(e) {}
+  }
 
-            <!-- Side Menu -->
-            <nav class="vault-menu">
-                <a href="#about" class="menu-item">[ > ] ABOUT</a>
-                <a href="#investigating" class="menu-item">[ > ] INVESTIGATING</a>
-                <a href="#education" class="menu-item">[ > ] EDUCATION</a>
-                <a href="#interests" class="menu-item">[ > ] RESEARCH</a>
-                <a href="#techstack" class="menu-item">[ > ] TECH STACK</a>
-                <a href="#aeronautics" class="menu-item">[ > ] AERO</a>
-                <a href="#projects" class="menu-item">[ > ] PROJECTS</a>
-                <a href="#publications" class="menu-item">[ > ] PUBS</a>
-                <a href="#laboratory" class="menu-item">[ > ] LAB</a>
-                <a href="#contact" class="menu-item">[ > ] CONTACT</a>
-            </nav>
+  let saved = 'renaissance';
+  try { saved = localStorage.getItem('kavinsky-theme') || 'renaissance'; } catch(e) {}
+  setTheme(saved);
 
-            <!-- Pip-Boy Panel -->
-            <aside class="pipboy-panel">
-                <div class="pipboy-screen">
-                    <div class="pipboy-content">
-                        <div class="radiation-meter">
-                            <p>Radiation Level</p>
-                            <div class="radiation-bar">
-                                <div class="radiation-fill"></div>
-                            </div>
-                        </div>
-                        <div class="stat-box">
-                            <p class="stat-line">VAULT DWELLER: <span class="highlight">FERNANDO</span></p>
-                            <p class="stat-line">CLASS: <span class="highlight">AI RESEARCHER</span></p>
-                            <p class="stat-line">LEVEL: <span class="highlight">GRAD. RESEARCHER</span></p>
-                            <p class="stat-line">FACTION: <span class="highlight">UFRGS / EXPLAIN</span></p>
-                            <p class="stat-line">STATUS: <span class="highlight">ACTIVE</span></p>
-                            <p class="stat-line">SPECIALTY: <span class="highlight">NEUROEVOLUTION</span></p>
-                        </div>
-                        <div class="inventory-display">
-                            <p>🎓 Engineering & AI Research</p>
-                            <p>🔬 3 Research Projects</p>
-                            <p>✈️ Private Pilot (in progress)</p>
-                            <p>🧠 XAI & ML Researcher</p>
-                            <p>📖 Publications (soon)</p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </main>
-    </div>
+  btn.addEventListener('click', () => {
+    setTheme(document.body.classList.contains('blueprint') ? 'renaissance' : 'blueprint');
+  });
+})();
+</script>
 
-    <script src="script.js"></script>
-</body>
-</html>
+</body></html>

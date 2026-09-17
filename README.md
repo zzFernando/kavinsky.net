@@ -1,71 +1,27 @@
-# Fernando "Kavinsky" Silveira — AI Researcher Portfolio
+# kavinsky.net
 
-Portfolio website with a **Fallout Pip-Boy/Terminal interface** theme. Static site deployed via Firebase Hosting.
+Personal research index for Fernando “Kavinsky” Silveira. The site is a static, dependency-free HTML/CSS project deployed with Firebase Hosting.
 
-## Features
+## Structure
 
-- **Fallout Terminal Design**: CRT scanlines, green phosphor glow, glitch effects
-- **Pip-Boy Sidebar**: Radiation meter, character stats, inventory
-- **Color Toggle**: Switch between green/amber themes (saved in localStorage)
-- **Boot Sounds**: Audio beeps via Web Audio API
-- **Scroll Animations**: Sections fade in with IntersectionObserver
-- **Responsive**: Desktop, tablet, mobile
+- `index.html` — homepage content and metadata
+- `styles.css` — responsive editorial design system
+- `404.html` — matching not-found page
+- `assets/images/` — portraits, research figures, and project imagery
+- `firebase.json` — Firebase Hosting configuration and cache rules
 
-## Content
+## Local preview
 
-- Hero with profile photo and social links (GitHub, LinkedIn, Email, Lattes)
-- About & currently investigating sections
-- Education (5 degrees/postgrads)
-- Research interests & tech stack
-- Aeronautics section
-- 3 Featured projects (CuMiDaVis, GeneCancerPredictor, neuroevo-weight-space-viz) with images and links
-- Publications placeholder
-- ExpLAIn laboratory info
-- Contact section
-
-## Quick Start
+Serve the repository root with any static HTTP server. For example:
 
 ```bash
-# Just open index.html in a browser
-open index.html
+npx serve .
 ```
 
-## Project Structure
-
-```
-├── index.html          # Fallout terminal homepage
-├── styles.css          # Fallout theme styles
-├── script.js           # Terminal effects and interactions
-├── firebase.json       # Firebase Hosting configuration
-├── .firebaserc         # Firebase project alias
-├── robots.txt          # SEO robots file
-└── assets/             # Images, favicon
-```
-
-## Color Toggle
-
-Click the **AMBER** button in the header to switch themes:
-- **Green** (default): Classic Fallout terminal
-- **Amber**: Amber monochrome terminal
-
-Preference persists via localStorage.
-
-## Assets
-
-All images in `assets/images/`:
-- `profile_pic.jpeg` — Profile photo
-- `education.png`, `tdc_pic.png`, `aero.png`, `robot.png`, `contact.png` — Section images
-- `cumida.png`, `gcp.png`, `neuro.png` — Project screenshots
-- `favicon.svg` — Site favicon
+The layout is designed around 375 px, 768 px, and 1440 px+ viewports. No client-side JavaScript or third-party UI/font dependencies are required.
 
 ## Deploy
 
 ```bash
 firebase deploy
 ```
-
----
-
-**War. War never changes.**
-
-Fernando Silveira · UFRGS · ExpLAIn · AI Researcher

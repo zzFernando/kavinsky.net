@@ -5,6 +5,10 @@
       "firebase.json",
       ".gitignore",
       "README.md",
+      "editorial-*.png",
+      "qa-*.png",
+      ".chrome-*",
+      ".qa-*",
       ".git",
       ".git/**"
     ],
