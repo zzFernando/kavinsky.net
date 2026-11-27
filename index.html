@@ -3,29 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kavinsky — Field Notes</title>
-<meta name="description" content="Fernando “Kavinsky” Silveira is an AI researcher and engineer working with neuroevolution, explainable AI, visual analytics and reliable research software.">
-<meta name="author" content="Fernando Silveira">
+<title>Fernando Kavinsky | Fernando Souza da Silveira</title>
+<meta name="description" content="Fernando Souza da Silveira (Fernando Kavinsky) is a software engineer and M.Sc. researcher in Artificial Intelligence at UFRGS, working on neuroevolution, explainable AI and visual analytics.">
+<meta name="author" content="Fernando Souza da Silveira">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#c7a66e" id="themeColor">
 <link rel="canonical" href="https://kavinsky.net/">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kavinsky — Field Notes">
-<meta property="og:description" content="AI research, engineering, aviation systems and sound by Fernando “Kavinsky” Silveira.">
+<meta property="og:type" content="profile">
+<meta property="profile:first_name" content="Fernando">
+<meta property="profile:last_name" content="Souza da Silveira">
+<meta property="og:title" content="Fernando Kavinsky | Fernando Souza da Silveira">
+<meta property="og:description" content="Fernando Souza da Silveira (Fernando Kavinsky) is a software engineer and M.Sc. researcher in Artificial Intelligence at UFRGS, working on neuroevolution, explainable AI and visual analytics.">
 <meta property="og:image" content="https://kavinsky.net/assets/images/profile_pic.jpeg">
 <meta property="og:url" content="https://kavinsky.net/">
-<meta property="og:site_name" content="Fernando Silveira">
+<meta property="og:site_name" content="Fernando Kavinsky">
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kavinsky — Field Notes">
-<meta name="twitter:description" content="AI research, engineering, aviation systems and sound by Fernando “Kavinsky” Silveira.">
+<meta name="twitter:title" content="Fernando Kavinsky | Fernando Souza da Silveira">
+<meta name="twitter:description" content="Fernando Souza da Silveira (Fernando Kavinsky) is a software engineer and M.Sc. researcher in Artificial Intelligence at UFRGS, working on neuroevolution, explainable AI and visual analytics.">
 <meta name="twitter:image" content="https://kavinsky.net/assets/images/profile_pic.jpeg">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Fernando Silveira","alternateName":"Kavinsky","url":"https://kavinsky.net/","image":"https://kavinsky.net/assets/images/profile_pic.jpeg","jobTitle":"AI Researcher","worksFor":{"@type":"Organization","name":"Federal University of Rio Grande do Sul","alternateName":"UFRGS"},"sameAs":["https://github.com/zzFernando","https://linkedin.com/in/zzfernando","http://lattes.cnpq.br/6508343705598182","https://orcid.org/0009-0005-8188-7807"]}
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://kavinsky.net/",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://kavinsky.net/#person",
+    "name": "Fernando Souza da Silveira",
+    "givenName": "Fernando",
+    "familyName": "Souza da Silveira",
+    "alternateName": ["Fernando Kavinsky", "Fernando Silveira", "Kavinsky"],
+    "url": "https://kavinsky.net/",
+    "image": "https://kavinsky.net/assets/images/profile-portrait.jpg",
+    "jobTitle": "Software Engineer and AI Researcher",
+    "nationality": {"@type": "Country", "name": "Brazil"},
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Federal University of Rio Grande do Sul",
+      "alternateName": "UFRGS",
+      "url": "https://www.ufrgs.br/"
+    },
+    "knowsAbout": ["Neuroevolution", "Explainable AI", "Visual Analytics", "Machine Learning"],
+    "sameAs": [
+      "https://github.com/zzFernando",
+      "https://linkedin.com/in/zzfernando",
+      "http://lattes.cnpq.br/6508343705598182",
+      "https://orcid.org/0009-0005-8188-7807"
+    ]
+  }
+}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap');
@@ -57,6 +88,7 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:14px;borde
 .hero>div:first-child{min-width:0}
 .kicker{display:block;margin-bottom:34px;font:22px/1.25 Caveat,cursive;color:var(--faint);transform:rotate(-1deg);transform-origin:left bottom}
 h1{font:600 clamp(64px,9vw,126px)/.9 Caveat,cursive;margin:0 0 34px;letter-spacing:-4px}
+.legal-name{margin:-18px 0 28px;font-size:22px;letter-spacing:.02em;color:var(--faint)}
 .lead{font-size:24px;max-width:520px;line-height:1.35}
 .note{font:22px Caveat,cursive;margin-top:30px;transform:rotate(-1deg);display:inline-block;border-bottom:1px solid}
 .sketch{width:100%;filter:sepia(1) contrast(.9);opacity:.9}
@@ -160,6 +192,7 @@ body.blueprint svg [fill="#2d2115"]{fill:#b8efff}
 body.blueprint .diagram [stroke="#2d2115"]{stroke:#9be8ff}
 body.blueprint a{color:#bcefff}
 body.blueprint .lead{font-family:"Cormorant Garamond",serif}
+body.blueprint .legal-name{font:13px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
 body.blueprint .note{
  border:1px solid rgba(100,207,241,.38);padding:8px 12px;
  background:rgba(31,151,190,.07);transform:none
@@ -232,6 +265,7 @@ body.blueprint .art:after{
  <div>
   <div class="kicker">folio 01 — engineering / research / sound</div>
   <h1 id="pageTitle">Fernando<br>Kavinsky</h1>
+  <p class="legal-name">Fernando Souza da Silveira</p>
   <div class="lead">AI researcher and engineer studying neuroevolution, explainable AI and visual analytics — with a parallel obsession for aviation, systems engineering and music.</div>
   <div class="note">M.Sc. researcher · software engineer · aviation student · musician →</div>
  </div>
@@ -275,12 +309,12 @@ body.blueprint .art:after{
  <h2>About the operator</h2>
  <div style="display:grid;grid-template-columns:1.3fr .7fr;gap:38px">
   <div>
-   <p class="lead">Engineer and M.Sc. researcher in Artificial Intelligence at the Federal University of Rio Grande do Sul (UFRGS), working with the ExpLAIn laboratory. My research focuses on how populations of neural networks move, reorganize and converge through high-dimensional weight spaces.</p>
-   <p style="font-size:20px;line-height:1.5">My background crosses software engineering, machine learning, distributed systems and aeronautical sciences. I am especially interested in methods that make complex learning systems observable, interpretable and reproducible — particularly where reliability matters.</p>
+   <p class="lead">Fernando Souza da Silveira, professionally known as Fernando Kavinsky, is a Brazilian software engineer and M.Sc. researcher in Artificial Intelligence at the Federal University of Rio Grande do Sul (UFRGS), affiliated with the ExpLAIn laboratory. Current research focuses on how populations of neural networks move, reorganize and converge through high-dimensional weight spaces.</p>
+   <p style="font-size:20px;line-height:1.5">The work draws on a background in software engineering, machine learning, distributed systems and aeronautical sciences, with a particular interest in methods that make complex learning systems observable, interpretable and reproducible, especially where reliability matters.</p>
   </div>
   <div class="card" style="min-height:auto">
    <figure class="media-frame portrait-frame" data-label="ID // OPERATOR 01">
-    <img src="assets/images/profile-portrait.jpg" width="400" height="400" alt="Portrait of Fernando Silveira wearing glasses" loading="lazy">
+    <img src="assets/images/profile-portrait.jpg" width="400" height="400" alt="Portrait of Fernando Souza da Silveira (Fernando Kavinsky) wearing glasses" loading="lazy">
     <figcaption>operator portrait / visual record 01</figcaption>
    </figure>
    <div class="num">☉</div><h3>Field identification</h3>
@@ -355,11 +389,11 @@ body.blueprint .art:after{
 <section class="section" id="contact">
  <h2>Correspondence</h2>
  <p class="lead">Open to research collaborations and work involving artificial intelligence, neuroevolution, visual analytics, scientific computing and aviation systems.</p>
- <p class="note contact-links"><a style="color:inherit" href="mailto:fernando.silveira@inf.ufrgs.br">fernando.silveira@inf.ufrgs.br</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://github.com/zzFernando" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://linkedin.com/in/zzfernando" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+ <p class="note contact-links"><a style="color:inherit" href="mailto:fernando.silveira@inf.ufrgs.br">fernando.silveira@inf.ufrgs.br</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://github.com/zzFernando" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://linkedin.com/in/zzfernando" target="_blank" rel="noopener noreferrer">LinkedIn</a><span aria-hidden="true">·</span><a style="color:inherit" href="https://orcid.org/0009-0005-8188-7807" target="_blank" rel="noopener noreferrer me">ORCID</a><span aria-hidden="true">·</span><a style="color:inherit" href="http://lattes.cnpq.br/6508343705598182" target="_blank" rel="noopener noreferrer me">Lattes</a></p>
 </section>
 </main>
 
-<div class="footer"><span>Fernando “Kavinsky” Silveira · Porto Alegre — Brazil</span><span>folio rev. 09 / 2026</span></div>
+<div class="footer"><span>Fernando Kavinsky (Fernando Souza da Silveira) · Porto Alegre, Brazil</span><span>folio rev. 09 / 2026</span></div>
 </div>
 
 <script>
