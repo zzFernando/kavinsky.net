@@ -1,6 +1,6 @@
 # kavinsky.net
 
-Personal research index for Fernando “Kavinsky” Silveira. The site is a static, dependency-free HTML/CSS project deployed with Firebase Hosting.
+Personal research index for Fernando Kavinsky (Fernando Souza da Silveira). The site is a static, dependency-free HTML/CSS project deployed with Firebase Hosting.
 
 ## Structure
 
